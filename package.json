@@ -5,7 +5,13 @@
   "repository": "https://github.com/jeffmicklos/jeffmicklos.com.git",
   "author": "Jeff Micklos <jeffmicklos@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nf start"
+  },
   "dependencies": {
-    "express": "^4.16.3"
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "foreman": "^3.0.1"
   }
 }

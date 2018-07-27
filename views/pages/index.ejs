@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="do4dJA-WmTEGm-Cs-1927QoB6y1ff7MS3ctM2dYi1Ls" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Jeff Micklos">
+    <meta name="description" content="The website of Jeff Micklos, an all around okay guy.">
+
+    <link rel="meta" type="application/rdf+xml" title="FOAF" href="foaf.rdf">
+
+    <!-- smile, we are watching you =) -->
+    <style>
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary,
+    time, mark, audio, video {
+      margin:0;
+      padding:0;
+      border:0;
+      outline:0;
+      font-size:100%;
+      vertical-align:baseline;
+      background:transparent;
+    }
+
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display:block;
+    }
+
+    ul, ol { list-style:none; }
+
+    blockquote, q { quotes:none; }
+
+    blockquote:before, blockquote:after,
+    q:before, q:after { content:''; content:none; }
+
+    h1, h2, h3, h4, h5, h6 {
+    	font-weight: normal;
+    }
+
+    a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+    ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+    mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+    del { text-decoration: line-through; }
+
+    abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+    /* tables still need cellspacing="0" in the markup */
+    table { border-collapse:collapse; border-spacing:0; }
+
+    hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+    input, select { vertical-align:middle; }
+
+
+
+
+    /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+    a:hover, a:active { outline: none; }
+
+
+    /* align checkboxes, radios, text inputs with their label
+       by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+    input[type="radio"] { vertical-align: text-bottom; }
+    input[type="checkbox"] { vertical-align: bottom; }
+    .ie7 input[type="checkbox"] { vertical-align: baseline; }
+    .ie6 input { vertical-align: text-bottom; }
+
+    /* hand cursor on clickable input elements */
+    label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+    /* webkit browsers add a 2px margin outside the chrome of form elements */
+    button, input, select, textarea { margin: 0; }
+
+    /* These selection declarations have to be separate.
+       No text-shadow: twitter.com/miketaylr/status/12228805301
+       Also: hot pink. */
+    ::-moz-selection{ background: #e9e9e9; text-shadow: none; }
+    ::selection { background: #e9e9e9; text-shadow: none; }
+
+    /*  j.mp/webkit-tap-highlight-color */
+    a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+    /* make buttons play nice in IE:
+       www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+    button {  width: auto; overflow: visible; }
+
+    /* bicubic resizing for non-native sized IMG:
+       code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+    .ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+
+    /*
+     * Non-semantic helper classes
+     */
+
+    /* for image replacement */
+    .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+    /* Hide for both screenreaders and browsers
+       css-discuss.incutio.com/wiki/Screenreader_Visibility */
+    .hidden { display: none; visibility: hidden; }
+
+    /* Hide only visually, but have it available for screenreaders
+       www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+    .visuallyhidden { position: absolute !important;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px); }
+
+    /* Hide visually and from screenreaders, but maintain layout */
+    .invisible { visibility: hidden; }
+
+    /* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+    .clearfix:before, .clearfix:after {
+      content: "\0020"; display: block; height: 0; visibility: hidden;
+    }
+
+    .clearfix:after { clear: both; }
+    /* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+    .clearfix { zoom: 1; }
+
+    /*
+     * Media queries for responsive design
+     * These follow after primary styles so they will successfully override.
+     */
+
+    @media all and (orientation:portrait) {
+      /* Style adjustments for portrait mode goes here */
+
+    }
+
+    @media all and (orientation:landscape) {
+      /* Style adjustments for landscape mode goes here */
+
+    }
+
+    /* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
+       Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+    @media screen and (max-device-width: 480px) {
+
+
+      /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+         j.mp/textsizeadjust
+      html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+    }
+
+    /*
+     * print styles
+     * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
+     */
+    @media print {
+      * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+      a, a:visited { color: #444 !important; text-decoration: underline; }
+      a:after { content: " (" attr(href) ")"; }
+      abbr:after { content: " (" attr(title) ")"; }
+      .ir a:after { content: ""; }  /* Don't show links for images */
+      pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+      thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+      tr, img { page-break-inside: avoid; }
+      @page { margin: 0.5cm; }
+      p, h2, h3 { orphans: 3; widows: 3; }
+      h2, h3{ page-break-after: avoid; }
+    }
+    </style>
+
+    <style>
+      @font-face {
+        font-family: 'Bembo';
+        src: url('../assets/BemboStd.otf') format('opentype');
+      }
+
+      @font-face {
+        font-family: 'Bembo-Italic';
+        src: url('../assets/BemboStd-Italic.otf') format('opentype');
+      }
+
+      html {
+        overflow-x: hidden;
+        font-size: 72%;/*62.5%;*/
+      }
+
+      body {
+        background: #f8f8f8;
+        font-family: Bembo, Georgia, 'Serif';
+        color: #333;
+        font-size: 1.6rem;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 100px;
+        border: 1rem solid #EDEDED;
+      }
+
+
+      .container {
+        width: 960px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .heading {
+        font-size: 4.2rem;
+        text-align: center;
+        margin-bottom: 8.75rem;
+      }
+
+      .subheading {
+        font-size: 1.2rem;
+        color: #999;
+        text-align: center;
+        text-rendering: optimizeSpeed;
+        margin-bottom: 1.7rem;
+        text-transform: uppercase;
+      }
+
+      .media-container {
+        margin-bottom: 10rem;
+      }
+
+      .media-list {
+        width: 64rem;
+        height: 39rem;
+        border: 1.5rem solid #FFF;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        margin-top: -21rem;
+        margin-left: -33.5rem;
+        position: absolute;
+      }
+
+      .media-list__item {
+        width: 32rem;
+        float: left;
+        overflow: hidden;
+      }
+
+      .media-list__item img {
+        height: 39rem;
+      }
+
+
+      .media-list__item video {
+        right: 33%;
+        position: relative;
+      }
+
+
+      .copy-container {
+        width: 70rem;
+        margin: 0 auto 10.5rem;
+      }
+
+      .copy-container__copy {
+        width: 33rem;
+        float: left;
+        margin: 0 1rem;
+        text-rendering: auto;
+        line-height: 2.4rem;
+        font-size: 1.6rem;
+        text-align: left;
+        letter-spacing: -0.01rem;
+      }
+
+      .copy-container__quote {
+        font-size: 1.8rem;
+        font-family: Bembo-Italic;
+      }
+
+      .break-the-fourth-wall {
+        color: #999;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        margin-bottom: 12.5rem;
+        line-height: 2.1rem;
+      }
+
+      .divider {
+        width: 14rem;
+        margin: 8rem auto 5em;
+        color: #8d8d8d;
+      }
+
+      .divider--header {
+        margin-top: 5rem;
+      }
+
+      .link-header {
+        font-size: 21px;
+        margin-bottom: 25px;
+      }
+
+      .links__list-item {
+        display: inline-block;
+      }
+
+      .links__link {
+        color: inherit;
+        text-decoration: none;
+        font-family: Bembo-Italic;
+      }
+
+      .links__link:hover {
+        border-bottom: 1px solid #8d8d8d;
+      }
+
+      .decompose:hover {
+        -webkit-animation: none;
+      }
+
+      @-webkit-keyframes flicker-1 { /* flame pulses */
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes flicker-2 { /* flame pulses */
+        0% {
+          opacity: 1;
+        }
+        30% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes blowout {
+        0% {
+          -webkit-filter: grayscale(0) brightness(100%) contrast(100%);
+          opacity: 1;
+        }
+
+        50% {
+          -webkit-filter: grayscale(1) brightness(200%) contrast(96%);
+        }
+
+        75% {
+          -webkit-filter: grayscale(1) brightness(300%) contrast(96%);
+        }
+
+        100% {
+          -webkit-filter: grayscale(1) brightness(300%) contrast(96%);
+          opacity: 0;
+        }
+      }
+
+
+      .flicker-1 {
+        -webkit-animation: flicker-1 2s 1 forwards;
+      }
+
+      .flicker-2 {
+        -webkit-animation: flicker-2 2s 1 forwards;
+      }
+
+      .flicker-3 {
+        -webkit-animation: flicker-1 1s 1 forwards;
+      }
+
+      .flicker-4 {
+        -webkit-animation: flicker-2 1s 1 forwards;
+      }
+
+      .flicker-5 {
+        -webkit-animation: fadeout 2s 1 forwards;
+      }
+
+      .flicker-6 {
+        -webkit-animation: fadeout 2s 1 forwards;
+      }
+
+      .blowout {
+        -webkit-animation: blowout 240s 1 forwards;
+      }
+    </style>
+
+    <title>Jeff Micklos</title>
+
+  </head>
+  <body>
+
+
+    <div class="container">
+
+      <div class="media-container">
+        <ul class="media-list">
+          <li class="media-list__item">
+            <video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted="">
+              <source src="https://scontent.cdninstagram.com/hphotos-xpf1/t50.2886-16/11020691_1454729881483605_859675451_n.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+            </video>
+          </li>
+          <li class="media-list__item">
+            <img src="https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11005202_926904620677092_1189375377_n.jpg">
+          </li>
+        </ul>
+      </div>
+
+      <h1 class="heading decompose-text">Jeff Micklos</h1>
+      <div class="copy-container clearfix">
+
+        <h2 class="subheading decompose-text">Scene I, Take I</h2>
+
+        <blockquote class="copy-container__quote decompose-text">
+          Pretending to be someone else never works - only actors<br>
+          can do it, and only because they’re all witches. I saw<br>
+          an actor once, I swear to God he didn’t blink the whole<br>
+          time I watched him.
+        </blockquote>
+
+        <hr class="divider divider--header" />
+
+        <p class="copy-container__copy decompose-text">
+
+          I am Jeff Micklos, writing to you from a remove<br>
+          perhaps great in both time and space. It’s odd,<br>
+          isn’t it, that I can type these letters with perfect<br>
+          confidence that you will see them just as I in-<br>
+          tended? An immaculate miracle of transcription a<br>
+          spooky reading at a distance, no byte out of place.<br>
+          &emsp;&emsp;During the day I write Javascript and CSS for<br>
+          Everlane, where we produce cleverly designed<br>
+          clothing for anyone to buy. Our very business is<br>
+          another modern miracle - a store that exists only<br>
+          on the internet, spinning designs out of and into<br>
+          whole cloth. It’s a feat made possible by the un-<br>
+          blinking diligence of our friend, the computer,<br>
+          who is both more loyal and more traitorous than
+          any dog.
+        </p>
+
+        <p class="copy-container__copy decompose-text">
+          Computers have a kind of bleak austerity to them,<br>
+          don’t they? Experienced programmers sound<br>
+          like old sailors. “The compiler is always right.<br>
+          The code doesn’t lie. The sea never sleeps.”<br>
+          &emsp;&emsp;The sea, the internet, society, they’re all so<br>
+          vast they threaten to swallow you the moment<br>
+          you wake. I often feel like the titular Creep from<br>
+          Radiohead’s song, who desperately longs for a kind<br>
+          of authenticity that doesn’t shrink from the world.<br>
+          &emsp;&emsp;Obviously, that hasn’t happened for me just yet,
+          but I’m trying to build that legacy through Everlane
+          and through April, a sleepy music band where me
+          and my very best friends play soft music very loudly.
+          I invite you to peruse both, and to reflect upon how
+          astounding it is that you can do so.
+        </p>
+
+      </div>
+
+
+      <blockquote class="break-the-fourth-wall decompose-text">
+        Writing about yourself is tricky, for me, at least. If unchecked<br>
+        there is a high chance that I will just end up writing about<br>
+        Radiohead and Snoopy. Thus, I called upon a former colleague<br>
+        and raconteur, Vincent Woo, to write a synopsis of myself.<br>
+        this speaks far more of talents than mine, nevertheless&hellip;
+      </blockquote>
+
+      <div class="copy-container clearfix">
+
+        <h2 class="subheading decompose-text">Scene I, Take II</h2>
+
+        <blockquote class="copy-container__quote decompose-text">
+          The only way to learn is to fuck up, they tell me. That<br>
+          first one was awful, in retrospect, but I suspect it’ll still<br>
+          be my favorite, because I always do my favorites first.<br>
+          What if we did one where you weren’t sad?
+        </blockquote>
+
+        <hr class="divider divider--header" />
+
+        <p class="copy-container__copy decompose-text">
+          I secretly love computers. I know, it’s my job to be<br>
+          good at computer stuff, so it’s obvious that I at least<br>
+          like them. What I mean is that we’re expected to be<br>
+          so professional about it more or less all the time.<br>
+          “This framework offers us a lot of flexibility,” or,<br>
+          “Let’s see if we can get these page latencies down.”<br>
+          What I love about writing CSS and JavaScript at<br>
+          Everlane is that we can and do take the time to step<br>
+          back and say, “Let’s fucking dazzle them.”<br>
+          Admittedly, sometimes we dazzle them with lower page latencies.
+        </p>
+
+        <p class="copy-container__copy decompose-text">
+          There’s a primordial joy in creating in a medium<br>
+          as new and, frankly, insane as the internet.<br>
+          We’re scooping up raw gobs of molten granite and<br>
+          sculpting David by flinging them at a bust. I’m just<br>
+          as surprised as you that anything works.<br>
+          I secretly love computers, but I also love making<br>
+          music with my very best friends, in a band named<br>
+          April, where we make very loud soft music. In both<br>
+          of these pursuits, I hope to dazzle, or at the very<br>
+          least, amuse you.
+        </p>
+
+      </div>
+
+
+
+      <hr class="divider" />
+
+      <h3 class="link-header">
+        Every bad act is stored on a magnetic tape, which we retain.
+      </h3>
+
+      <ul class="links">
+        <li class="links__list-item">
+          <a href="https://soundcloud.com/listentoapril" class="links__link" rel="me">April</a>,
+        </li>
+        <li class="links__list-item">
+          <a href="https://everlane.com" class="links__link">Everlane</a>,
+        </li>
+        <li class="links__list-item">
+          <a href="https://www.linkedin.com/in/jeffmicklos" class="links__link" rel="me">LinkedIn</a>,
+        </li>
+        <li class="links__list-item">
+          <a href="https://instagram.com/jeffheaven/" class="links__link" rel="me">Instagram</a>,
+        </li>
+        <li class="links__list-item">
+          <a href="https://github.com/jeffmicklos" class="links__link" rel="me">Github</a>,
+        </li>
+        <li class="links__list-item">
+          <a href="https://facebook.com/jeffmicklos" class="links__link" rel="me">Facebook</a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <script>
+var elements = $(".decompose-text");
+
+elements.each(function(idx, el) {
+  var element = $(el);
+  element.children("br").replaceWith("^");
+  var text = element.text();
+  var a = text.split("");
+  var inject = "";
+  var klass = "";
+  if (a.length) {
+    $(a).each(function(i, item) {
+      if (item == "^") {
+        inject += "<br>";
+      } else if (item == "" || item == " " || item == " ") {
+        inject += "<span>" + item + "</span>";
+      } else {
+        inject += '<span class="decompose">' + item + "</span>";
+      }
+    });
+
+    element.empty().append(inject);
+  }
+});
+
+var elementsToDecompose = _.shuffle($(".decompose").toArray());
+var cssClasses = [
+  "flicker-1",
+  "flicker-2",
+  "flicker-3",
+  "flicker-4",
+  "flicker-5",
+  "flicker-6"
+];
+
+function decomposeBlocks() {
+  $(".divider").addClass("flicker-1");
+  $(".media-list").addClass("blowout");
+}
+
+function decomposeSet() {
+  var queue = elementsToDecompose.splice(0, 50);
+
+  if (!queue.length) {
+    decomposeBlocks();
+    return;
+  }
+
+  _.each(queue, function(element) {
+    setTimeout(function() {
+      $(element).addClass(_.sample(cssClasses));
+
+      var index = queue.indexOf(element);
+      queue.splice(index, 1);
+
+      if (!queue.length) {
+        decomposeSet();
+      }
+    }, Math.floor(Math.random() * 50000) + 5000);
+  });
+}
+
+// Start decomposition at 4 minutes
+setTimeout(decomposeSet, 240000);
+
+$(".media-container").css("height", $(window).outerHeight());
+
+$(window).resize(
+  _.throttle(function() {
+    $(".media-container").css("height", $(window).outerHeight());
+  }, 400)
+);
+
+BLACKLISTED_IDS = [
+  "912454151399772260_1563150227",
+  "883165041732587697_1563150227",
+  "885937200892711704_1563150227",
+  "884997547150774843_1563150227",
+  "947602661669310545_1563150227",
+  "883165041732587697_1563150227"
+];
+
+var instagramUser = _.sample([386856561, 1563150227]);
+
+var params = {
+  client_id: "9d1fc7a0a5a34f9ab49bf4511b7ed26d"
+};
+
+var url =
+  "https://api.instagram.com/v1/users/" +
+  instagramUser +
+  "/media/recent/?" +
+  $.param(params);
+
+$.ajax(url, {
+  crossDomain: true,
+  dataType: "jsonp",
+  cache: true
+}).done(function(feed) {
+  var media = _.shuffle(
+    _.reject(feed.data, function(datum) {
+      return _.contains(BLACKLISTED_IDS, datum.id);
+    })
+  );
+
+  var queue = _.clone(media);
+
+  (function loop() {
+    setTimeout(function() {
+      if (queue[0]) {
+        var html;
+        var datum = queue.shift();
+        var element = $(".media-list__item").eq(Math.floor(Math.random() * 2));
+
+        if (datum.type == "video") {
+          html = [
+            '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
+            '<source src="' +
+              datum.videos.standard_resolution.url +
+              '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
+            "</video>"
+          ].join("");
+        } else {
+          html = '<img src="' + datum.images.standard_resolution.url + '" />';
+        }
+
+        element.html(html);
+      } else {
+        queue = _.clone(media);
+      }
+
+      loop();
+    }, (Math.floor(Math.random() * 6) + 2) * 1000);
+  })();
+});
+
+var _gaq = _gaq || [];
+_gaq.push(["_setAccount", "UA-25310300-1"]);
+_gaq.push(["_trackPageview"]);
+
+(function() {
+  var ga = document.createElement("script");
+  ga.type = "text/javascript";
+  ga.async = true;
+  ga.src =
+    ("https:" == document.location.protocol ? "https://ssl" : "http://www") +
+    ".google-analytics.com/ga.js";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+  </body>
+</html>

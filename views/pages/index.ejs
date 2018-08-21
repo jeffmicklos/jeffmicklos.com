@@ -181,17 +181,17 @@
     <style>
       @font-face {
         font-family: 'Bembo';
-        src: url('../assets/BemboStd.otf') format('opentype');
+        src: url('../typefaces/BemboStd.otf') format('opentype');
       }
 
       @font-face {
         font-family: 'Bembo-Italic';
-        src: url('../assets/BemboStd-Italic.otf') format('opentype');
+        src: url('../typefaces/BemboStd-Italic.otf') format('opentype');
       }
 
       html {
         overflow-x: hidden;
-        font-size: 72%;/*62.5%;*/
+        font-size: 72%;
       }
 
       body {
@@ -429,11 +429,11 @@
         <ul class="media-list">
           <li class="media-list__item">
             <video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted="">
-              <source src="https://scontent.cdninstagram.com/hphotos-xpf1/t50.2886-16/11020691_1454729881483605_859675451_n.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+              <source src="https://scontent-sjc3-1.cdninstagram.com/vp/ce5ba1f66ea5d35e83b112f62d16ed3c/5B7DD257/t50.2886-16/13093694_1543171229318047_1162484974_n.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
             </video>
           </li>
           <li class="media-list__item">
-            <img src="https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11005202_926904620677092_1189375377_n.jpg">
+            <img src="https://instagram.fsnc1-1.fna.fbcdn.net/vp/045129b17fa3d07ce46bd4f7ef108afc/5BF86D81/t51.2885-15/sh0.08/e35/s640x640/12237587_1512000639126163_1398665109_n.jpg">
           </li>
         </ul>
       </div>
@@ -577,153 +577,161 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
     <script>
-var elements = $(".decompose-text");
+    if (
+  !/bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(
+    navigator.userAgent,
+  )
+) {
+  var elements = $('.decompose-text');
 
-elements.each(function(idx, el) {
-  var element = $(el);
-  element.children("br").replaceWith("^");
-  var text = element.text();
-  var a = text.split("");
-  var inject = "";
-  var klass = "";
-  if (a.length) {
-    $(a).each(function(i, item) {
-      if (item == "^") {
-        inject += "<br>";
-      } else if (item == "" || item == " " || item == " ") {
-        inject += "<span>" + item + "</span>";
-      } else {
-        inject += '<span class="decompose">' + item + "</span>";
-      }
+  elements.each(function(idx, el) {
+    var element = $(el);
+    element.children('br').replaceWith('^');
+    var text = element.text();
+    var a = text.split('');
+    var inject = '';
+    var klass = '';
+    if (a.length) {
+      $(a).each(function(i, item) {
+        if (item == '^') {
+          inject += '<br>';
+        } else if (item == '' || item == ' ' || item == ' ') {
+          inject += '<span>' + item + '</span>';
+        } else {
+          inject += '<span class="decompose">' + item + '</span>';
+        }
+      });
+
+      element.empty().append(inject);
+    }
+  });
+
+  var elementsToDecompose = _.shuffle($('.decompose').toArray());
+  var cssClasses = [
+    'flicker-1',
+    'flicker-2',
+    'flicker-3',
+    'flicker-4',
+    'flicker-5',
+    'flicker-6',
+  ];
+
+  function decomposeBlocks() {
+    $('.divider').addClass('flicker-1');
+    $('.media-list').addClass('blowout');
+  }
+
+  function decomposeSet() {
+    var queue = elementsToDecompose.splice(0, 50);
+
+    if (!queue.length) {
+      decomposeBlocks();
+      return;
+    }
+
+    _.each(queue, function(element) {
+      setTimeout(function() {
+        $(element).addClass(_.sample(cssClasses));
+
+        var index = queue.indexOf(element);
+        queue.splice(index, 1);
+
+        if (!queue.length) {
+          decomposeSet();
+        }
+      }, Math.floor(Math.random() * 50000) + 5000);
     });
-
-    element.empty().append(inject);
-  }
-});
-
-var elementsToDecompose = _.shuffle($(".decompose").toArray());
-var cssClasses = [
-  "flicker-1",
-  "flicker-2",
-  "flicker-3",
-  "flicker-4",
-  "flicker-5",
-  "flicker-6"
-];
-
-function decomposeBlocks() {
-  $(".divider").addClass("flicker-1");
-  $(".media-list").addClass("blowout");
-}
-
-function decomposeSet() {
-  var queue = elementsToDecompose.splice(0, 50);
-
-  if (!queue.length) {
-    decomposeBlocks();
-    return;
   }
 
-  _.each(queue, function(element) {
-    setTimeout(function() {
-      $(element).addClass(_.sample(cssClasses));
+  // Start decomposition at 4 minutes
+  setTimeout(decomposeSet, 240000);
 
-      var index = queue.indexOf(element);
-      queue.splice(index, 1);
+  BLACKLISTED_IDS = [
+    '912454151399772260_1563150227',
+    '883165041732587697_1563150227',
+    '885937200892711704_1563150227',
+    '884997547150774843_1563150227',
+    '947602661669310545_1563150227',
+    '883165041732587697_1563150227',
+  ];
 
-      if (!queue.length) {
-        decomposeSet();
-      }
-    }, Math.floor(Math.random() * 50000) + 5000);
+  var instagramUser = _.sample([386856561, 1563150227]);
+
+  var params = {
+    access_token: '1563150227.7c7d1f9.49da2a05ba6449e0aa6f7082a95b5e8f',
+  };
+
+  var url =
+    'https://api.instagram.com/v1/users/' +
+    instagramUser +
+    '/media/recent/?' +
+    $.param(params);
+
+  $.ajax(url, {
+    crossDomain: true,
+    dataType: 'jsonp',
+    cache: true,
+  }).done(function(feed) {
+    var media = _.shuffle(
+      _.reject(feed.data, function(datum) {
+        return _.contains(BLACKLISTED_IDS, datum.id);
+      }),
+    );
+
+    var queue = _.clone(media);
+
+    (function loop() {
+      setTimeout(function() {
+        if (queue[0]) {
+          var html;
+          var datum = queue.shift();
+          var element = $('.media-list__item').eq(
+            Math.floor(Math.random() * 2),
+          );
+
+          if (datum.type == 'video') {
+            html = [
+              '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
+              '<source src="' +
+                datum.videos.standard_resolution.url +
+                '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
+              '</video>',
+            ].join('');
+          } else {
+            html = '<img src="' + datum.images.standard_resolution.url + '" />';
+          }
+
+          element.html(html);
+        } else {
+          queue = _.clone(media);
+        }
+
+        loop();
+      }, (Math.floor(Math.random() * 6) + 2) * 1000);
+    })();
   });
 }
 
-// Start decomposition at 4 minutes
-setTimeout(decomposeSet, 240000);
-
-$(".media-container").css("height", $(window).outerHeight());
+$('.media-container').css('height', $(window).outerHeight());
 
 $(window).resize(
   _.throttle(function() {
-    $(".media-container").css("height", $(window).outerHeight());
-  }, 400)
+    $('.media-container').css('height', $(window).outerHeight());
+  }, 400),
 );
 
-BLACKLISTED_IDS = [
-  "912454151399772260_1563150227",
-  "883165041732587697_1563150227",
-  "885937200892711704_1563150227",
-  "884997547150774843_1563150227",
-  "947602661669310545_1563150227",
-  "883165041732587697_1563150227"
-];
-
-var instagramUser = _.sample([386856561, 1563150227]);
-
-var params = {
-  client_id: "9d1fc7a0a5a34f9ab49bf4511b7ed26d"
-};
-
-var url =
-  "https://api.instagram.com/v1/users/" +
-  instagramUser +
-  "/media/recent/?" +
-  $.param(params);
-
-$.ajax(url, {
-  crossDomain: true,
-  dataType: "jsonp",
-  cache: true
-}).done(function(feed) {
-  var media = _.shuffle(
-    _.reject(feed.data, function(datum) {
-      return _.contains(BLACKLISTED_IDS, datum.id);
-    })
-  );
-
-  var queue = _.clone(media);
-
-  (function loop() {
-    setTimeout(function() {
-      if (queue[0]) {
-        var html;
-        var datum = queue.shift();
-        var element = $(".media-list__item").eq(Math.floor(Math.random() * 2));
-
-        if (datum.type == "video") {
-          html = [
-            '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
-            '<source src="' +
-              datum.videos.standard_resolution.url +
-              '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
-            "</video>"
-          ].join("");
-        } else {
-          html = '<img src="' + datum.images.standard_resolution.url + '" />';
-        }
-
-        element.html(html);
-      } else {
-        queue = _.clone(media);
-      }
-
-      loop();
-    }, (Math.floor(Math.random() * 6) + 2) * 1000);
-  })();
-});
-
 var _gaq = _gaq || [];
-_gaq.push(["_setAccount", "UA-25310300-1"]);
-_gaq.push(["_trackPageview"]);
+_gaq.push(['_setAccount', 'UA-25310300-1']);
+_gaq.push(['_trackPageview']);
 
 (function() {
-  var ga = document.createElement("script");
-  ga.type = "text/javascript";
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
   ga.async = true;
   ga.src =
-    ("https:" == document.location.protocol ? "https://ssl" : "http://www") +
-    ".google-analytics.com/ga.js";
-  var s = document.getElementsByTagName("script")[0];
+    ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+    '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(ga, s);
 })();
 </script>

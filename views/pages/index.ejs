@@ -658,6 +658,8 @@
     '884997547150774843_1563150227',
     '947602661669310545_1563150227',
     '883165041732587697_1563150227',
+    '1143005065793530596_386856561',
+    '1190010122145393512_386856561',
   ];
 
   var instagramUser = _.sample([1563150227, 386856561]);
@@ -716,13 +718,15 @@
     }).done(function(feed) {
       var isLastRequest = !!media.length;
 
-      media = media.concat(_.shuffle(
+      media = media.concat(
         _.reject(feed.data, function(datum) {
           return _.contains(BLACKLISTED_IDS, datum.id);
-        }),
-      ));
+        })
+     );
 
       if(isLastRequest) {
+        media = _.shuffle(media);
+
         (function loop() {
           setTimeout(function() {
             changeMedia();

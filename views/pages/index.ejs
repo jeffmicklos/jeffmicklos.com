@@ -679,33 +679,39 @@
     );
 
     var queue = _.clone(media);
+    var hasRanOnce = false;
+    
+    var changeMedia = function() {
+      if (queue[0]) {
+        var html;
+        var datum = queue.shift();
+        var element = $('.media-list__item').eq(
+          Math.floor(Math.random() * 2),
+        );
+
+        if (datum.type == 'video') {
+          html = [
+            '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
+            '<source src="' +
+              datum.videos.standard_resolution.url +
+              '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
+            '</video>',
+          ].join('');
+        } else {
+          html = '<img src="' + datum.images.standard_resolution.url + '" />';
+        }
+
+        element.html(html);
+      } else {
+        queue = _.clone(media);
+      }
+    }
+    
+    changeMedia();
 
     (function loop() {
       setTimeout(function() {
-        if (queue[0]) {
-          var html;
-          var datum = queue.shift();
-          var element = $('.media-list__item').eq(
-            Math.floor(Math.random() * 2),
-          );
-
-          if (datum.type == 'video') {
-            html = [
-              '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
-              '<source src="' +
-                datum.videos.standard_resolution.url +
-                '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
-              '</video>',
-            ].join('');
-          } else {
-            html = '<img src="' + datum.images.standard_resolution.url + '" />';
-          }
-
-          element.html(html);
-        } else {
-          queue = _.clone(media);
-        }
-
+        changeMedia();
         loop();
       }, (Math.floor(Math.random() * 6) + 2) * 1000);
     })();

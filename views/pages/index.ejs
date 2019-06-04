@@ -433,8 +433,11 @@
             </video>
           </li>
           <li class="media-list__item">
-            <img src="https://scontent.cdninstagram.com/vp/ef305e43ec6a560d8c5208a165b20710/5D831AFB/t51.2885-15/sh0.08/e35/s640x640/12976645_1797807097115182_1411663243_n.jpg?_nc_ht=scontent.cdninstagram.com">
-          </li>
+          
+            <video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted="">
+              <source src=" https://scontent.cdninstagram.com/v/t50.2886-16/13629149_544064289118115_956823907_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjY0MC5mZWVkIn0&_nc_ht=scontent.cdninstagram.com&oe=5CF8DE47&oh=d164b6d3e494aa08dfdf31565f5e67ab&vtsbc=1" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+            </video>
+           </li>
         </ul>
       </div>
 
@@ -643,8 +646,10 @@
     });
   }
 
-  // Start decomposition at 4 minutes
-  setTimeout(decomposeSet, 240000);
+  // Start decomposition at 4 minutes, for non-bots
+  if(!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+    setTimeout(decomposeSet, 120000);
+  }
 
   BLACKLISTED_IDS = [
     '912454151399772260_1563150227',
@@ -655,67 +660,78 @@
     '883165041732587697_1563150227',
   ];
 
-  var instagramUser = _.sample([386856561, 1563150227]);
+  var instagramUser = _.sample([1563150227, 386856561]);
+  
+  var users = [
+    {
+      id: 1563150227,
+      accessToken: '1563150227.7c7d1f9.49da2a05ba6449e0aa6f7082a95b5e8f',
+    },
+    {
+      id: 386856561,
+      accessToken: '386856561.e7478f4.5c7612759cc34e3796ba88843cb3b5a9',
+    },
+  ]
+  
+  var media = [];
+  var queue = [];
+  
+  var changeMedia = function() {
+    if (queue[0]) {
+      var html;
+      var datum = queue.shift();
+      var element = $('.media-list__item').eq(
+        Math.floor(Math.random() * 2),
+      );
 
-  var params = {
-    access_token: '1563150227.7c7d1f9.49da2a05ba6449e0aa6f7082a95b5e8f',
-  };
-
-  var url =
-    'https://api.instagram.com/v1/users/' +
-    instagramUser +
-    '/media/recent/?' +
-    $.param(params);
-
-  $.ajax(url, {
-    crossDomain: true,
-    dataType: 'jsonp',
-    cache: true,
-  }).done(function(feed) {
-    var media = _.shuffle(
-      _.reject(feed.data, function(datum) {
-        return _.contains(BLACKLISTED_IDS, datum.id);
-      }),
-    );
-
-    var queue = _.clone(media);
-    var hasRanOnce = false;
-    
-    var changeMedia = function() {
-      if (queue[0]) {
-        var html;
-        var datum = queue.shift();
-        var element = $('.media-list__item').eq(
-          Math.floor(Math.random() * 2),
-        );
-
-        if (datum.type == 'video') {
-          html = [
-            '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
-            '<source src="' +
-              datum.videos.standard_resolution.url +
-              '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
-            '</video>',
-          ].join('');
-        } else {
-          html = '<img src="' + datum.images.standard_resolution.url + '" />';
-        }
-
-        element.html(html);
+      if (datum.type == 'video') {
+        html = [
+          '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
+          '<source src="' +
+            datum.videos.standard_resolution.url +
+            '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
+          '</video>',
+        ].join('');
       } else {
-        queue = _.clone(media);
+        html = '<img src="' + datum.images.standard_resolution.url + '" />';
       }
-    }
-    
-    changeMedia();
 
-    (function loop() {
-      setTimeout(function() {
-        changeMedia();
-        loop();
-      }, (Math.floor(Math.random() * 6) + 2) * 1000);
-    })();
-  });
+      element.html(html);
+    } else {
+      queue = _.clone(media);
+    }
+  }
+  
+  _.each(users, function(user) {
+    var url =
+      'https://api.instagram.com/v1/users/' +
+      'self' +
+      '/media/recent/?' +
+      $.param({ access_token: user.accessToken })
+
+    $.ajax(url, {
+      crossDomain: true,
+      dataType: 'jsonp',
+      cache: true,
+    }).done(function(feed) {
+      var isLastRequest = !!media.length;
+
+      media = media.concat(_.shuffle(
+        _.reject(feed.data, function(datum) {
+          return _.contains(BLACKLISTED_IDS, datum.id);
+        }),
+      ));
+
+      if(isLastRequest) {
+        (function loop() {
+          setTimeout(function() {
+            changeMedia();
+            loop();
+          }, (Math.floor(Math.random() * 6) + 2) * 1000);
+        })();
+      }
+    })
+  })
 }
 
 $('.media-container').css('height', $(window).outerHeight());

@@ -256,6 +256,7 @@
 
       .media-list__item video {
         right: 33%;
+        object-fit: cover;
         position: relative;
       }
 
@@ -428,13 +429,10 @@
       <div class="media-container">
         <ul class="media-list">
           <li class="media-list__item">
-            <video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted="">
-              <source src="https://scontent.cdninstagram.com/v/t50.2886-16/13097523_1543180782652224_907291986_n.mp4?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&oe=5D8DF30A&oh=86faffd527eb14210e617a0febd37a80" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-            </video>
+            <img src="https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/10175334_844795098883516_1109804445_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=Wk-qS88gv6YAX-VsHNR&tp=1&oh=f68738f019840e0d8cefb7f930cde7a3&oe=60363412" />
           </li>
           <li class="media-list__item">
-          
-            <img src="https://scontent-lax3-1.cdninstagram.com/vp/6328a1908fba65a7534e807b5e3eb376/5E259D2A/t51.2885-15/e35/12237587_1512000639126163_1398665109_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=107" />
+            <img src="https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/67753725_2361020963994042_5536506133197474113_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=3PgGIfU6_iwAX9IdUI8&tp=1&oh=e2c0c36967ea329598ffd7cdce079167&oe=6035E03B" />
            </li>
         </ul>
       </div>
@@ -578,187 +576,201 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
     <script>
-    if (
-  !/bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(
-    navigator.userAgent,
-  )
-) {
-  var elements = $('.decompose-text');
+      if (
+        !/bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(
+          navigator.userAgent,
+        )
+      ) {
+        var elements = $('.decompose-text');
 
-  elements.each(function(idx, el) {
-    var element = $(el);
-    element.children('br').replaceWith('^');
-    var text = element.text();
-    var a = text.split('');
-    var inject = '';
-    var klass = '';
-    if (a.length) {
-      $(a).each(function(i, item) {
-        if (item == '^') {
-          inject += '<br>';
-        } else if (item == '' || item == ' ' || item == ' ') {
-          inject += '<span>' + item + '</span>';
-        } else {
-          inject += '<span class="decompose">' + item + '</span>';
+        elements.each(function(idx, el) {
+          var element = $(el);
+          element.children('br').replaceWith('^');
+          var text = element.text();
+          var a = text.split('');
+          var inject = '';
+          var klass = '';
+          if (a.length) {
+            $(a).each(function(i, item) {
+              if (item == '^') {
+                inject += '<br>';
+              } else if (item == '' || item == ' ' || item == ' ') {
+                inject += '<span>' + item + '</span>';
+              } else {
+                inject += '<span class="decompose">' + item + '</span>';
+              }
+            });
+
+            element.empty().append(inject);
+          }
+        });
+
+        var elementsToDecompose = _.shuffle($('.decompose').toArray());
+        var cssClasses = [
+          'flicker-1',
+          'flicker-2',
+          'flicker-3',
+          'flicker-4',
+          'flicker-5',
+          'flicker-6',
+        ];
+
+        function decomposeBlocks() {
+          $('.divider').addClass('flicker-1');
+          $('.media-list').addClass('blowout');
         }
-      });
 
-      element.empty().append(inject);
-    }
-  });
+        function decomposeSet() {
+          var queue = elementsToDecompose.splice(0, 50);
 
-  var elementsToDecompose = _.shuffle($('.decompose').toArray());
-  var cssClasses = [
-    'flicker-1',
-    'flicker-2',
-    'flicker-3',
-    'flicker-4',
-    'flicker-5',
-    'flicker-6',
-  ];
+          if (!queue.length) {
+            decomposeBlocks();
+            return;
+          }
 
-  function decomposeBlocks() {
-    $('.divider').addClass('flicker-1');
-    $('.media-list').addClass('blowout');
-  }
+          _.each(queue, function(element) {
+            setTimeout(function() {
+              $(element).addClass(_.sample(cssClasses));
 
-  function decomposeSet() {
-    var queue = elementsToDecompose.splice(0, 50);
+              var index = queue.indexOf(element);
+              queue.splice(index, 1);
 
-    if (!queue.length) {
-      decomposeBlocks();
-      return;
-    }
-
-    _.each(queue, function(element) {
-      setTimeout(function() {
-        $(element).addClass(_.sample(cssClasses));
-
-        var index = queue.indexOf(element);
-        queue.splice(index, 1);
-
-        if (!queue.length) {
-          decomposeSet();
+              if (!queue.length) {
+                decomposeSet();
+              }
+            }, Math.floor(Math.random() * 50000) + 5000);
+          });
         }
-      }, Math.floor(Math.random() * 50000) + 5000);
-    });
-  }
 
-  // Start decomposition at 4 minutes, for non-bots
-  if(!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
-    setTimeout(decomposeSet, 120000);
-  }
+        // Start decomposition at 2 minutes, for non-bots
+        if(!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+          setTimeout(decomposeSet, 120000);
+        }
 
-  BLACKLISTED_IDS = [
-    '912454151399772260_1563150227',
-    '883165041732587697_1563150227',
-    '885937200892711704_1563150227',
-    '884997547150774843_1563150227',
-    '947602661669310545_1563150227',
-    '883165041732587697_1563150227',
-    '1143005065793530596_386856561',
-    '1190010122145393512_386856561',
-  ];
+        BLOCKLISTED_IDS = [
+          '912454151399772260_1563150227',
+          '883165041732587697_1563150227',
+          '885937200892711704_1563150227',
+          '884997547150774843_1563150227',
+          '947602661669310545_1563150227',
+          '883165041732587697_1563150227',
+          '1143005065793530596_386856561',
+          '1190010122145393512_386856561',
+        ];
 
-  var instagramUser = _.sample([1563150227, 386856561]);
+        var users = ['jeffheaven', 'jeffmicklos']
 
-  var users = [
-    {
-      id: 1563150227,
-      accessToken: '1563150227.7c7d1f9.49da2a05ba6449e0aa6f7082a95b5e8f',
-    },
-    {
-      id: 386856561,
-      accessToken: '386856561.e7478f4.3bca3f66d10c42908d97cab8e0a5d085',
-    },
-  ]
-  
-  var media = [];
-  var queue = [];
-  
-  var changeMedia = function() {
-    if (queue[0]) {
-      var html;
-      var datum = queue.shift();
-      var element = $('.media-list__item').eq(
-        Math.floor(Math.random() * 2),
-      );
+        var media = _.shuffle([
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t50.2886-16/97500079_647567656092001_8240746050245719130_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5mZWVkLmRlZmF1bHQiLCJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSJ9&_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=SdjWjk_uIAMAX9qpUG2&vs=17875444303664399_31628018&_nc_vs=HBksFQAYJEdLXzd6d1ZoQVJ5WTlVd0NBRnAwR1JIZkFsMXlia1lMQUFBRhUAAsgBABUAGCRHSzdFelFVMndqem00bVFEQUJ4Y1Z4N2NxLUpSYmtZTEFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMBUAACaevr3d5efAPxUCKAJDMywXQERqn752yLQYEmRhc2hfYmFzZWxpbmVfMV92MREAdeoHAA%3D%3D&oe=600CFD15&oh=5b1ab6166ca012c2f2e2419b2b936bba",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e35/c157.0.405.405a/89285343_609714489607875_9105568086333951363_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=FXfs9cAy8T8AX91cKdS&tp=1&oh=82ce899a663e20a1ebc61fc45256e110&oe=600D488F",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t50.2886-16/81356925_242696923377412_8370663586333429804_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5mZWVkLmRlZmF1bHQiLCJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSJ9&_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=8gev8qFBDT4AX-aEydM&vs=17856976825670895_3417176821&_nc_vs=HBksFQAYJEdIMW8yUVFFN19kSHU5d0FBQ3lRczUwdWtpcDBia1lMQUFBRhUAAsgBABUAGCRHSjkzMmdUcWYtVmhNdzBCQUZXdlVrM3E3UDVyYmtZTEFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMBUAACbe%2F5i37LS4PxUCKAJDMywXQEWMzMzMzM0YEmRhc2hfYmFzZWxpbmVfMV92MREAdeoHAA%3D%3D&oe=600D430A&oh=9ba1423539198ae51363a1a2a020627f",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t50.2886-16/79953335_1430446213786218_3893732203673869993_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5mZWVkLmRlZmF1bHQiLCJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSJ9&_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=F6RKGTmR3dYAX92IheV&vs=17869230361530686_3629985302&_nc_vs=HBksFQAYJEdMZjl3d1JxYW5HMl94UUZBS25lZWpMUFVBazJia1lMQUFBRhUAAsgBABUAGCRHR0JleWdSNUpXc2NsWndBQURuS2JCTDdka2dlYmtZTEFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMBUAACb8ytfZjP69PxUCKAJDMywXQEfZmZmZmZoYEmRhc2hfYmFzZWxpbmVfMV92MREAdeoHAA%3D%3D&oe=600D5674&oh=fed94460426f316236c069ef58705cd3",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e35/c152.0.596.596a/75341311_242128946756784_4141132718623197875_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=100&_nc_ohc=9jQMkaeeBMwAX8tS9lA&tp=1&oh=aa39e909405a7afe47905f977551c3d0&oe=60335059",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e35/c150.0.601.601a/70204377_772178906534469_8350313996803581124_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=Uw-asbS4EQYAX9rlrTA&tp=1&oh=665e3956dbf03ce152cac7ca462ad4c0&oe=6033E333",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/67753725_2361020963994042_5536506133197474113_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=3PgGIfU6_iwAX9IdUI8&tp=1&oh=e2c0c36967ea329598ffd7cdce079167&oe=6035E03B",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/67432278_808047956258668_7854669198316226206_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=u7vHVAl7K1MAX96dKZ8&tp=1&oh=b51dc830fadf66bc3867a398fbd4f6ad&oe=603597EF",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c331.0.778.778a/s640x640/66290176_155445712190980_2224919439244244540_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=MJ70JMgiwQ0AX-TfdAf&tp=1&oh=c92e398589ad819984cb079e0556bbf3&oe=6036086A",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c243.0.953.953a/s640x640/65304699_891376404560442_2530243764563686807_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=AGKGugSwX_8AX_1sCVp&tp=1&oh=486a0d9bed9408f139dfb1967211670a&oe=60353A31",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/65210157_1402635496606575_7725306774818996299_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=-bF0i7NHc9MAX-u1F4y&tp=1&oh=b3e0b56000cbc671ebaa65cef41955f1&oe=603343FC",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c234.0.971.971a/s640x640/64979563_409504919776633_8683027386834937815_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=Bf4fLcuMwuAAX9XdL5J&tp=1&oh=9ece5872564c4cd1db71fce3dec95da0&oe=60354366",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/11116737_1396259937363852_1278005735_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Tyo1U37X1LcAX9wupI2&tn=lZkfybKnuxudxRAE&tp=1&oh=ca04d2324496e69ce6b768ff8e3bd132&oe=6035EC97",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e15/10249133_1534988183394459_641202051_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=44ccYw0jdnQAX9Po86R&tp=1&oh=c8a071fc0eced8b657b9e1c670aa87fc&oe=60349CF5",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/10175334_844795098883516_1109804445_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=Wk-qS88gv6YAX-VsHNR&tp=1&oh=f68738f019840e0d8cefb7f930cde7a3&oe=60363412",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e15/11380884_1581733392094070_1554601535_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=q9I0v9vyCEYAX_XAqvI&tp=1&oh=55b2b7d1132d22fd5c6aa506d2902a86&oe=6034EC4D",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/11357791_1016365241707181_2000055862_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=105&_nc_ohc=W_uXkgJbfqQAX8uQ5NN&tp=1&oh=46f6b40df5e1b1126b5c7b7b12f11293&oe=6034599A",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/1941072_1424890804423957_887066423_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=w3TxG5lBph4AX-4fiSL&tp=1&oh=1165e54b82adbf539b065bf441368eba&oe=6033FD40",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e15/1922001_411120759033621_862437924_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=daqzzx4_mj0AX8-45Du&tp=1&oh=f2e82d81f120a45e8f39f3f7e9b4d188&oe=60344677",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/1742286_1461031990778257_1099083465_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=8iULY9M-ZLUAX-z6DPL&tp=1&oh=1da4c684b18b1aaaac328f9d01816487&oe=6035A3AB",
+          "https://instagram.fsan1-2.fna.fbcdn.net/v/t51.2885-15/e15/1661329_240416366082229_1358067629_n.jpg?_nc_ht=instagram.fsan1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=FsVT_OvgzGAAX-KpC9E&tp=1&oh=e0cc71971296a1b57032bc8dcc4386df&oe=6032BBD7",
+          "https://instagram.fsan1-1.fna.fbcdn.net/v/t51.2885-15/e15/1742265_213739955487678_2129124264_n.jpg?_nc_ht=instagram.fsan1-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=Unv8OL2MW3sAX9IkHPC&tp=1&oh=0a47ca08fc8b91dabee104d5cb15b954&oe=60353232"
+        ])
+        var queue = [];
 
-      if (datum.type == 'video') {
-        html = [
-          '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
-          '<source src="' +
-            datum.videos.standard_resolution.url +
-            '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
-          '</video>',
-        ].join('');
-      } else {
-        html = '<img src="' + datum.images.standard_resolution.url + '" />';
-      }
+        function changeMedia() {
+          if (queue[0]) {
+            var html;
+            var src = queue.shift();
+            var element = $('.media-list__item').eq(
+              Math.floor(Math.random() * 2),
+            );
 
-      element.html(html);
-    } else {
-      queue = _.clone(media);
-    }
-  }
-  
-  _.each(users, function(user) {
-    var url =
-      'https://api.instagram.com/v1/users/' +
-      'self' +
-      '/media/recent/?' +
-      $.param({ access_token: user.accessToken })
+            if (src.includes('mp4')) {
+              html = [
+                '<video height="640" width="640" loop="loop" preload="auto" autoplay="true" muted>',
+                '<source src="' +
+                  src +
+                  '" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'></source>',
+                '</video>',
+              ].join('');
+            } else {
+              html = '<img src="' + src + '" />';
+            }
 
-    $.ajax(url, {
-      crossDomain: true,
-      dataType: 'jsonp',
-      cache: true,
-    }).done(function(feed) {
-      var isLastRequest = !!media.length;
-
-      media = media.concat(
-        _.reject(feed.data, function(datum) {
-          return _.contains(BLACKLISTED_IDS, datum.id);
-        })
-     );
-
-      if(isLastRequest) {
-        media = _.shuffle(media);
+            element.html(html);
+          } else {
+            queue = _.clone(media);
+          }
+        }
 
         (function loop() {
           setTimeout(function() {
             changeMedia();
             loop();
-          }, (Math.floor(Math.random() * 6) + 2) * 1000);
-        })();
+          }, (Math.floor(Math.random() * 6) + 2) * 750);
+        }())
+
+        /*
+        _.each(users, function(user) {
+          $.ajax(`https://www.instagram.com/${user}/?__a=1`)
+          .done(res => {
+            var nodes = res.graphql.user.edge_owner_to_timeline_media.edges.map(e => e.node)
+            var isLastRequest = !!nodes.length;
+
+            media = media.concat(
+              _.reject(nodes, function(node) {
+                return _.contains(BLOCKLISTED_IDS, node.id);
+              })
+            )
+
+            if(isLastRequest) {
+              media = _.shuffle(media);
+
+              changeMedia();
+
+              (function loop() {
+                setTimeout(function() {
+                  changeMedia();
+                  loop();
+                }, (Math.floor(Math.random() * 6) + 2) * 1000);
+              })();
+            }
+          })
+        })
+        */
       }
-    })
-  })
-}
 
-$('.media-container').css('height', $(window).outerHeight());
+      $('.media-container').css('height', $(window).outerHeight());
 
-$(window).resize(
-  _.throttle(function() {
-    $('.media-container').css('height', $(window).outerHeight());
-  }, 400),
-);
+      $(window).resize(
+        _.throttle(function() {
+          $('.media-container').css('height', $(window).outerHeight());
+        }, 400),
+      );
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-25310300-1']);
-_gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25310300-1']);
+      _gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src =
-    ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-    '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(ga, s);
-})();
-</script>
-
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src =
+          ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+          '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
   </body>
 </html>

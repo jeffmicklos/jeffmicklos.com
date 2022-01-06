@@ -2,19 +2,22 @@ const express = require('express');
 const app = express();
 
 function wwwRedirect(req, res, next) {
-  if (req.headers.host.slice(0, 4) !== 'www.') {
-    var newHost = 'www.'; //req.headers.host.slice(4);
-    return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+  if (req.headers.host.search(/^www/) === -1) {
+    return res.redirect(
+      301,
+      req.protocol + '://www.' + req.headers.host + req.originalUrl,
+    );
   }
   next();
 }
 
 app.set('trust proxy', true);
-app.use(wwwRedirect);
 
 app.set('port', process.env.PORT || 5000);
 
 app.use(express.static(__dirname + '/public'));
+
+app.use(wwwRedirect);
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');

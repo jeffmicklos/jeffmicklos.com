@@ -27,7 +27,6 @@
       }
 
       .font-serif {
-        /*font-family: "Sabon LT Pro";*/
         font-family: 'Goudy Old Style' !important;
       }
 
@@ -35,9 +34,6 @@
         background: #fff;
         color: #000;
       }
-      /*.font-serif.italic {
-        font-family: "Sabon LT Pro";
-      }*/
     </style>
   </head>
   <body class="bg-black">
@@ -1006,7 +1002,6 @@
       async function go() {
         while (strings.length) {
           if (paused) {
-            console.log('paused, bailing');
             break;
           }
 
@@ -1018,27 +1013,17 @@
 
           const letters = strings[0].split('');
 
-          /*
-          for (let x = 0; x < letters.length; x++) {
-            await typeLetter(letters[x]);
-            container.scrollTop = container.scrollHeight;
-            await sleep(randomInRange(10, 100));
-          }*/
-
-          if (paused) {
-            break;
-          }
-
           while (letters.length) {
             if (paused) {
-              console.log('paused on letter', letters[0]);
-              break;
+              return;
             }
 
             await typeLetter(letters[0]);
             container.scrollTop = container.scrollHeight;
             await sleep(randomInRange(10, 100));
+
             letters.splice(0, 1);
+            strings[0] = letters.join('');
           }
 
           strings.splice(0, 1);
@@ -1065,27 +1050,6 @@
       );
 
       observer.observe(container);
-
-      //go();
-
-      const Images = [
-        '48973_mrrlpj.jpg',
-        '93ae0e4b296a01577decf7da0b79bc33_fwb1lh.jpg',
-        '136850631_8fe0276e3c_tclcq1.jpg',
-        'beejay2_t3tmwa.jpg',
-        'apple-fest.-large_1202135653681_bccdbp.jpg',
-        'drelogic_w3u82i.jpg',
-        'kanye-bloggin_j6ypqa.jpg',
-        'kate-bush-fairlight_ui0wj9.jpg',
-        'thenetcyberchat5screensaver_kbf9qs.jpg',
-        '09tmag-romanek-slide-05V8-jumbo_jdhwdg.jpg',
-        '0_e55rn3jS7HomRttj_naqzik.jpg',
-        'David-Bowie_iy4wye.webp',
-        'gomezccc0_b1hg8k.jpg',
-      ];
-
-      const heroImageRoot =
-        'https://res.cloudinary.com/listentoapril/image/upload/e_art:daguerre/';
 
       setInterval(function () {
         var allImagesToBick = document.querySelectorAll('.flicker');
@@ -1134,14 +1098,6 @@
           }
         }, 80);
       }, 5000);
-
-      /*document.getElementById(
-        "hero"
-      ).style.backgroundImage = `url(${heroImageRoot}${
-        Images[randomInRange(0, Images.length - 1)]
-      })`;*/
-
-      // $0.setSelectionRange(0, 2, 'forward')
     </script>
   </body>
 </html>

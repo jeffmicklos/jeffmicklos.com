@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 function wwwRedirect(req, res, next) {
+  console.log(req.headers.host, req.originalUrl);
   if (req.headers.host.search(/^www/) === -1) {
     return res.redirect(
       301,
@@ -12,7 +13,6 @@ function wwwRedirect(req, res, next) {
 }
 
 app.set('trust proxy', true);
-
 app.set('port', process.env.PORT || 5000);
 
 app.use(express.static(__dirname + '/public'));

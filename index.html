@@ -549,18 +549,17 @@
         </div>
 
         <div class="grid grid-cols-12 gap-4 text-white">
-          <div class="col-span-12 my-4 border-white/25 border p-2">
-            <figure
-              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-            >
+          <div class="col-span-12 my-4">
+            <figure class="border p-2 border-white/25">
               <img
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/https___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_38d7df8f-0da5-4fb5-92fc-f1c0294961c3_2560x1600_bjan9p-crop_vffc9u.jpg"
+                class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/zombies_fgyegl.jpg"
               />
               <figcaption class="text-xs text-gray-600 text-right">
-                The Wachowskis, <i>The Matrix</i>, 1999
+                Makoto Nagahisa, <i>We Are Little Zombies</i>, 2019
               </figcaption>
             </figure>
-          </div>
+
         </div>
       </div>
 
@@ -745,6 +744,19 @@
               <figure class="mb-8">
                 <video controls loop>
                   <source
+                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330726/5_jwqzm6.mp4"
+                  />
+                </video>
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  April, <i>Nightshade / Moon Beam</i> Instgram video, 2021
+                </figcaption>
+              </figure>
+
+              <figure class="mb-8">
+                <video controls loop>
+                  <source
                     src="https://res.cloudinary.com/listentoapril/video/upload/v1641330716/9_cap3_2_vnrjtm.mp4"
                   />
                 </video>
@@ -755,18 +767,6 @@
                 </figcaption>
               </figure>
 
-              <figure class="mb-8">
-                <video controls loop>
-                  <source
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330726/5_jwqzm6.mp4"
-                  />
-                </video>
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                >
-                  April, <i>Nightshade / Moon Beam</i> Instgram video, 2021
-                </figcaption>
-              </figure>
             </li>
           </ul>
         </div>
@@ -842,12 +842,19 @@
           <figure class="border p-2 border-white/25">
             <img
               class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/zombies_fgyegl.jpg"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/https___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_38d7df8f-0da5-4fb5-92fc-f1c0294961c3_2560x1600_bjan9p-crop_vffc9u.jpg"
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Makoto Nagahisa, <i>We Are Little Zombies</i>, 2019
+              The Wachowskis, <i>The Matrix</i>, 1999
             </figcaption>
           </figure>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 text-white my-8">
+        <div class="col-span-12 text-center">
+            <h4 class="text-8xl font-bold mb-8" id="footer-truism">SLOW PROCESSION</h4>
+            <textarea id="footer-sentence" class="bg-black text-center w-full mb-8 antialiased text-sm" contenteditable="false" style="pointer-events: none; resize: none;""></textarea>
         </div>
       </div>
     </div>
@@ -890,7 +897,7 @@
         return /\p{Emoji}/u.test(s);
       }
 
-      async function typeLetter(letter) {
+      async function typeLetter(letter, element=container) {
         if (
           randomInRange(1, 30) === 10 &&
           letter != '.' &&
@@ -899,30 +906,32 @@
           letter != '-' &&
           !isEmoji(letter)
         ) {
-          container.value += randomLetter();
+          element.value += randomLetter();
           await sleep(150);
-          container.value = container.value.slice(0, -1);
+          element.value = element.value.slice(0, -1);
           await sleep(300);
         }
-        container.value += letter;
+        element.value += letter;
       }
 
       const Command = {
-        DELETE: async function (count) {
+        DELETE: async function (count, element=container) {
           for (let i = 0; i <= count; i++) {
-            container.value = container.value.slice(0, -1);
+            element.value = container.value.slice(0, -1);
             await sleep(100);
           }
         },
-        SELECT_AND_DELETE: async function (count) {
+        SELECT_AND_DELETE: async function (count, element=container) {
           //container.focus();
-          container.setSelectionRange(
-            container.value.length - count,
-            container.value.length,
-          );
+          if(element.setSelectionRange) {
+            element.setSelectionRange(
+              element.value.length - count,
+              element.value.length,
+            );
+          }
           //container.focus();
           await sleep(500);
-          container.value = container.value.slice(0, -count);
+          element.value = element.value.slice(0, -count);
         },
         SLEEP: async function (timeout) {
           await sleep(timeout);
@@ -1028,6 +1037,40 @@
         // i hope to at least amuse you
       ];
 
+      const strings2 = [
+        'I secretly love computers.',
+        '\n',
+        'I know, it’s my job to be good at computer stuff, so it’s obvious that I at least like them.',
+        "\n",
+        "\n",
+        " What I mean is that we’re expected to be so professional about it more or less all the time.",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "There’s a primordial joy in creating in a medium as new and, frankly, insane as the internet.",
+        "\n",
+        "\n",
+        "It’s like we’re scooping up raw gobs of molten granite and sculpting David by flinging them at a bust.",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "I’m just as surprised as you that anything works."
+      ]
+
+      const footerSentences = [
+        "every bad act is stored on a magnetic tape ",
+        "which we retain ",
+        "kept in a secret vault ",
+        "and evaluated, ",
+        "repeated and repeated ",
+        "with your code name at the top of the file. ",
+        "to be reviewed at your departure ",
+        "for the pearly gates.",
+        "..."
+    ]
+   
       async function canContinue() {
         return new Promise((resolve, reject) => {});
       }
@@ -1087,6 +1130,28 @@
       );
 
       observer.observe(container);
+
+      
+      const footer = document.getElementById('footer-sentence')
+      async function runFooter() {
+
+        for(let i = 0; i < footerSentences.length; i++) {
+          console.log(footerSentences[i])
+          const letters = footerSentences[i].split('')
+          for(let x = 0; x < letters.length; x++) {
+            console.log(letters[x])
+            await typeLetter(letters[x], footer);
+            await sleep(randomInRange(10, 100)); 
+          }
+
+          await Command.SELECT_AND_DELETE(footerSentences[i].length, footer)
+          await sleep(randomInRange(10, 100));
+        }
+
+        runFooter()
+      }
+
+      runFooter()
 
       setInterval(function () {
         var allImagesToBick = document.querySelectorAll('.flicker');

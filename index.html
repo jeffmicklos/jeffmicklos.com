@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <!--
       smile, we are watching you :)
     -->
@@ -17,7 +16,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-      #canvas, #second-canvas {
+      html {
+        scroll-padding-top: 1rem;
+      }
+
+      #canvas,
+      #second-canvas {
         font-family: Helvetica;
         font-weight: bold;
         font-size: 41px;
@@ -47,310 +51,551 @@
         aspect-ratio: 4/5;
       }
 
+      .duo {
+        position: relative;
+        background-color: #000000;
+      }
+
+      .duo::before {
+        background-color: #109fe7;
+        bottom: 0;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+      }
+
+      .duo img {
+        height: 100%;
+        max-width: 100%;
+        mix-blend-mode: hard-light;
+        object-fit: cover;
+        opacity: 1;
+        position: relative;
+        width: 100%;
+      }
+
+      .duo--red {
+        background-color: #fe00ff;
+      }
+
+      .duo--red::before {
+        background-color: #ff202e;
+        mix-blend-mode: multiply;
+      }
+
+      .duo--red img {
+        mix-blend-mode: darken;
+      }
+
       ::selection {
         background: #fff;
         color: #000;
       }
+
+      @media (min-width: 1311px) {
+        nav {
+          display: block !important;
+        }
+      }
+
+      nav a {
+        opacity: 0.33;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/c_thumb,dpr_3.0,h_300,w_300/v1640947163/thenet_aiymjj.jpg"]
+      {
+        aspect-ratio: 1;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1650604865/lc_xl4cci.gif"]
+      {
+        aspect-ratio: 1.4874371859296482;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1706162369/port/imac.jpg"]
+      {
+        aspect-ratio: 1.7452574525745257;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/27_989_tflwtg.jpg"]
+      {
+        aspect-ratio: 2.343137254901961;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload//f_auto,q_auto,dpr_2,w_688/everlane-red_cukwa2.jpg"]
+      {
+        aspect-ratio: 1.250485436893204;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/7e7601ad_b2b6_ssa77p.jpg"]
+      {
+        aspect-ratio: 1.4976744186046511;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1640942845/56646008-9030e700-6633-11e9-8d03-755d51b616bc_hbrsc6.gif"]
+      {
+        aspect-ratio: 1.9053254437869822;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/47654f6e0f84ffd51ccb0fc7eac8dcda_zjhlbj.jpg"]
+      {
+        aspect-ratio: 1.2595744680851064;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny_civ9o6.jpg"]
+      {
+        aspect-ratio: 1.1607843137254903;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1650608310/278714_puw4pm.jpg"]
+      {
+        aspect-ratio: 1.0422535211267605;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/AC2K_CONRANS_LRG-575x442_jbtlbc.jpg"]
+      {
+        aspect-ratio: 1.2982456140350878;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/Screen_Shot_2022-01-03_at_12.04.12_PM_vcopu3.png"]
+      {
+        aspect-ratio: 0.7728459530026109;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/tumblr_nbwd0r8sA61qh8y7qo1_400_nqf32k_tuwm23.gif"]
+      {
+        aspect-ratio: 1.8734177215189873;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024,h_440,c_fill/port/d7hftxdivxxvm.cloudfront-1.jpg"]
+      {
+        aspect-ratio: 2.3260340632603405;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/holv2_g6b13n.jpg"]
+      {
+        aspect-ratio: 1.2081632653061225;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_gif,q_auto,dpr_2,w_320/tumblr_lnmy1vDc4F1qiz3j8o1_500_dxzt5e.webp"]
+      {
+        aspect-ratio: 1.85;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/134228685_720237942217826_6531018334201906538_n-1_ldantf.jpg"]
+      {
+        aspect-ratio: 1.7724550898203593;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1640993029/OMD_HACIENDA_gypjoc.jpg"]
+      {
+        aspect-ratio: 0.7493670886075949;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/29937908_dac1ab2d8f_o_w6oqnh.jpg"]
+      {
+        aspect-ratio: 1.3273542600896862;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/april-joe-chris-up-close-blue_ysufci.jpg"]
+      {
+        aspect-ratio: 1.910979228486647;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1650657182/cd_o0zyhs.gif"]
+      {
+        aspect-ratio: 1.3636363636363635;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/https___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_38d7df8f-0da5-4fb5-92fc-f1c0294961c3_2560x1600_bjan9p-crop_vffc9u.jpg"]
+      {
+        aspect-ratio: 2.420253164556962;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/jpduo_fh4o02.jpg"]
+      {
+        aspect-ratio: 1.7595628415300546;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/video/upload/c_scale,w_700/v1640999530/cp_lurhza.gif"]
+      {
+        aspect-ratio: 1.861271676300578;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/lain_tm3gf5.gif"]
+      {
+        aspect-ratio: 1.4028436018957346;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/zombies_fgyegl.jpg"]
+      {
+        aspect-ratio: 2.4020100502512562;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/suspira_zfmrk8.gif"]
+      {
+        aspect-ratio: 2.3492063492063493;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/ConsciousRareHound-size_restricted_shx9wh.gif"]
+      {
+        aspect-ratio: 1.303964757709251;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1640926854/136850631_8fe0276e3c_tclcq1.jpg"]
+      {
+        aspect-ratio: 1.2384937238493723;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/girl-army-photography-justine-kurland-dutch-32-march-april-2001-1541_o_ji2lcl.jpg"]
+      {
+        aspect-ratio: 1.494949494949495;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1642797353/alienduo_ylp1gx.jpg"]
+      {
+        aspect-ratio: 1.7643835616438357;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/IMG_5695_hq3b3h.jpg"]
+      {
+        aspect-ratio: 1;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/IMG_5262_ds61n2.jpg"]
+      {
+        aspect-ratio: 0.6677852348993288;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/IMG_5221_ry065a.jpg"]
+      {
+        aspect-ratio: 0.6677852348993288;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/IMG_5621_w3bzdm.jpg"]
+      {
+        aspect-ratio: 0.6677852348993288;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/segacropextend_fpe2jf.jpg"]
+      {
+        aspect-ratio: 2.354679802955665;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/bladerunner_buqf7l.jpg"]
+      {
+        aspect-ratio: 2.430188679245283;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchsearch_cqjbnr.png"]
+      {
+        aspect-ratio: 0.5764075067024129;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchbiz_uatjgz.png"]
+      {
+        aspect-ratio: 0.5764075067024129;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchdeal_xmbvbc.png"]
+      {
+        aspect-ratio: 0.5764075067024129;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny-holzer-protect-me-times-square_wo75gf.jpg"]
+      {
+        aspect-ratio: 1.3333333333333333;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/magiccapos_gxzfnx.jpg"]
+      {
+        aspect-ratio: 1.50253807106599;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/50b8bb50-d92b-4e6a-b722-5decd8bf9923_full_qjrzgh.jpg"]
+      {
+        aspect-ratio: 2.923547400611621;
+      }
+      img[src="https://res.cloudinary.com/listentoapril/image/upload/v1650666592/mademacspinhoriz_l6lyta.gif"]
+      {
+        aspect-ratio: 4;
+      }
     </style>
   </head>
   <body class="bg-black">
+    <nav class="text-white fixed top-0 p-8 text-sm hidden">
+      <ol>
+        <!--
+        <li>
+          <a href="#hero" class="text-gray-100">Top</a>
+        </li>
+        -->
+        <li><a href="#apple" class="text-gray-100">Apple</a></li>
+        <li>
+          <a href="#everlane" class="text-gray-100">Everlane</a>
+        </li>
+        <li><a href="#april" class="text-gray-100">April</a></li>
+        <li>
+          <a href="#coderpad" class="text-gray-100">CoderPad.io</a>
+        </li>
+        <li><a href="#chimera" class="text-gray-100">Chimera</a></li>
+        <li><a href="#yelp" class="text-gray-100">Yelp</a></li>
+        <!--
+        <li><a href="#outro" class="text-gray-100">outro</a></li>
+        -->
+      </ol>
+    </nav>
+
     <div class="h-screen bg-black max-w-screen-lg mx-auto">
-        <div
-          id="hero"
-          class="bg-cover col-span-12 text-center text-white font pt-8"
+      <div
+        id="hero"
+        class="bg-cover col-span-12 text-center text-white font pt-8"
+      >
+        <h1
+          class="uppercase text-xs mb-8 relative tracking-widest"
+          title="BREADCRUMBS. LOVE LETTERS. ARCHIVAL QUALITY. MISINTERPRETATIONS. NEW TERRAIN."
         >
-          <h1 class="uppercase text-xs mb-8 relative tracking-widest"
-            title="BREADCRUMBS. LOVE LETTERS. ARCHIVAL QUALITY. MISINTERPRETATIONS. NEW TERRAIN.">
-            The internet home of Jeff Micklos
-          </h1>
-          <h2
-            title="these words have been echoing in my head for the past 20 years. unfortunately sourceless but deeply rooted."
-            class="font-black uppercase italic text-2xl my-24 md:text-7xl z-10 mb-8 md:m-24 z-10 relative px-16"
-          >
-            A boy in his room, trying to catch a ghost.
-          </h2>
+          The internet home of Jeff Micklos
+        </h1>
+        <h2
+          title="these words have been echoing in my head for the past 20 years. unfortunately sourceless but deeply rooted."
+          class="font-black uppercase italic text-2xl my-24 md:text-7xl z-10 mb-8 md:m-24 z-10 relative px-16"
+        >
+          A boy in his room, trying to catch a ghost.
+        </h2>
 
-          <div class="grid grid-cols-12 gap-4">
-            <img
-              class="col-span-4 col-start-5 relative md:-top-32 -top-28"
-              src="https://res.cloudinary.com/listentoapril/image/upload/c_thumb,dpr_3.0,h_300,w_300/v1640947163/thenet_aiymjj.jpg"
-            />
-          </div>
+        <div class="grid grid-cols-12 gap-4">
+          <img
+            class="col-span-4 col-start-5 relative md:-top-32 -top-28"
+            src="https://res.cloudinary.com/listentoapril/image/upload/c_thumb,dpr_3.0,h_300,w_300/v1640947163/thenet_aiymjj.jpg"
+          />
         </div>
+      </div>
 
-        <div class="grid grid-cols-12 gap-4 text-white">
-          <div class="col-span-4 top-0 sticky hidden md:block">
-            <textarea
-              id="canvas"
-              class="bg-white text-xl p-4 w-full text-black mb-4"
-              style="height: 480px"
-              contenteditable="false"
-            ></textarea>
+      <div class="grid grid-cols-12 gap-4 text-white" id="apple">
+        <!-- Apple -->
+        <div class="col-span-4 top-0 sticky hidden md:block h-max">
+          <textarea
+            id="canvas"
+            class="bg-white text-xl p-4 w-full text-black"
+            style="height: 480px"
+            contenteditable="false"
+          ></textarea>
 
-            <figure class="mb-4 border border-white/25 p-2">
-              <img
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/47654f6e0f84ffd51ccb0fc7eac8dcda_zjhlbj.jpg"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Kate Bush and Peter Gabriel, <i>Don&rsquo;t Give Up</i>, 1986
-              </figcaption>
-            </figure>
-
-            <blockquote
-              class="text-white opacity-30 hover:opacity-100 mb-4 dedent font-serif leading-5 transition duration-1000"
-            >
-              “When I was young there were beatniks. Hippies. Punks. Gangsters.
-              Now you're a hacktivist. Which I would probably be if I was 20.
-              Shuttin' down MasterCard. But there's no look to that lifestyle!
-              Besides just wearing a bad outfit with bad posture. Has WikiLeaks
-              caused a look? No! I'm mad about that. If your kid comes out of
-              the bedroom and says he just shut down the government, it seems to
-              me he should at least have an outfit for that.”
-              <cite>– John&nbsp;Waters</cite>
-            </blockquote>
-
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny_civ9o6.jpg
-          "
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Jenny Holzer,from <i>The Living Series</i>, 1989
-              </figcaption>
-            </figure>
-
+          <!--
             <figure class="mb-4 border border-white/25 p-2">
             <img
               class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              src="https://res.cloudinary.com/listentoapril/image/upload/v1650608310/278714_puw4pm.jpg"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/v1/port/dmovw9717mrd6rcm7nlg"
+              title=""
+            />
+            
+            <figcaption class="text-xs text-gray-600 text-right">
+               Martha Ladly of Martha and the Muffins, 1980
+            </figcaption>
+          </figure>
+
+          <figure class="mb-4 border border-white/25 p-2">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/Screen_Shot_2022-01-03_at_12.02.46_PM_ijtxkx.png"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              K-Hole, NormCore, 2013
+            </figcaption>
+          </figure>
+
+          -->
+
+          <blockquote
+            class="my-8 dedent font-serif text-white opacity-30 hover:opacity-100 transition duration-1000 leading-5"
+          >
+            “we are for each other; then<br />
+            laugh, leaning back in my arms<br />
+            for life’s not a paragraph<br />
+            and death i think is no parenthesis.” – <cite>ee cummings</cite>
+          </blockquote>
+
+          <!--
+            <figure class="mb-4 border border-white/25 p-2">
+            <img
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto/v1/port/hyeunxmjlxxejm2pcbda"
               title=""
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Aaliyah for Tommy Hilfiger, 1996
+              Deftones, <i>Digital Bath</i>, 2000
             </figcaption>
           </figure>
-            <!-- 
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/v1640993029/OMD_HACIENDA_gypjoc.jpg"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Orchestral Manoeuvres in the Dark, Concert Flyer, 1983
-              </figcaption>
-            </figure>
-          -->
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img loading="lazy" class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000" src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/AC2K_CONRANS_LRG-575x442_jbtlbc.jpg" />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Art Club 2000, Untitled (Conrans I), 1992
-              </figcaption>
-            </figure>
-
-            <blockquote
-              class="text-white opacity-30 hover:opacity-100 mb-4 dedent font-serif leading-5 transition duration-1000"
-            >
-              &ldquo;Meanwhile, a decade after “Pattern Recognition,” K-HOLE, a
-              marketing think tank modelled on the one in the novel, popularized
-              Cayce’s fashion philosophy in the form of “normcore,” a
-              trend—forecasted, then real—based on the idea of secretive,
-              informed, intentional blankness. Normcore influenced design more
-              broadly, shaping the aesthetics of companies like Everlane and
-              Uniqlo. The boundary between fiction and reality turned out to be
-              even blurrier than Gibson had thought. He had rewritten the code
-              himself.&rdquo;
-              <cite
-                >– The&nbsp;New&nbsp;Yorker, How William Gibson Keeps His
-                Science Fiction Real, 2019</cite
-              >
-            </blockquote>
-
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img
-                loading="lazy"
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/Screen_Shot_2022-01-03_at_12.04.12_PM_vcopu3.png"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                K-Hole, NormCore, 2013
-              </figcaption>
-            </figure>
-
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img title="Snow Beach by Ralph Lauren fire emoji fire emoji" class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000" src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/tumblr_nbwd0r8sA61qh8y7qo1_400_nqf32k_tuwm23.gif" />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Raewkon, <i>Can It Be All So Simple</i> music video, 1993
-              </figcaption>
-            </figure>
-
-            <blockquote
-              class="my-8 dedent font-serif text-white opacity-30 hover:opacity-100 transition duration-1000 leading-5"
-            >
-              “There is nothing in the world that is not mysterious, but the
-              mystery is more evident in certain things than in others: in the
-              sea, in the eyes of the elders, in the color yellow, and in
-              music.” – <cite>Jorge&nbsp;Luis&nbsp;Borges</cite>
-            </blockquote>
-
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <video
-                controls
-                poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif/yt5s.com-Portishead_In_Portishead_-_The_Rip_04_current_tv_High_Quality_360p_wjfkwo"
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              >
-                <source
-                  src="https://res.cloudinary.com/listentoapril/video/upload/v1641282819/yt5s.com-Portishead_In_Portishead_-_The_Rip_04_current_tv_High_Quality_360p_wjfkwo.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <figcaption class="text-xs text-gray-600 text-right">
-                Portishead, <i>The Rip</i>, 2007
-              </figcaption>
-            </figure>
-
-            <figure class="border border-white/25 p-2">
-              <img
-                loading="lazy"
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/featured00_1064x_l2og3v.jpg"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Christopher Gray for the Situationist International,
-                <i>Ten Days that Shook the University</i>, 1967
-              </figcaption>
-            </figure>
-
-
-
-            <!--
-            <figure class="mb-4 border border-white/25 p-2 mb-4">
-              <img
-                class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/v1640993366/Alien040213_aya3n4.jpg"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Ridley Scott (Sigourney Weaver) <i>Alien</i>, 1979
-              </figcaption>
-            </figure>
-          -->
-
-            <!--
-
-          <iframe
-            class="w-full h-48"
-            src="https://www.youtube-nocookie.com/embed/iehbLsp9tgI"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
         -->
-          </div>
-          <div class="antialiased md:col-span-8 md:col-start-5 col-span-10 col-start-2">
+
+          <figure class="mb-4 border border-white/25 p-2">
+            <img
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1650604865/lc_xl4cci.gif"
+              title=""
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Lauren Conrad in <i>The Hills</i>, 1996
+            </figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="antialiased md:col-span-8 md:col-start-5 col-span-10 col-start-2"
+        >
+          <div class="duo">
             <img
               class="mb-8"
-              src="https://res.cloudinary.com/listentoapril/image/upload//f_auto,q_auto,dpr_2,w_688/everlane-red_cukwa2.jpg"
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1706162369/port/imac.jpg"
             />
-            <h3 class="text-3xl mb-8">Everlane</h3>
-            <ul class="mb-4">
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Augmented / Extended Reality
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                In-Store Technology
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Team Leading
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Interaction Design
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Javascript (Vanilla, React, Next.js, Backbone, jQuery, etc)
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
-              >
-                Ruby
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
-              >
-                Progressive Web Apps
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
-              >
-                Motion Design
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Hiring
-              </li>
-            </ul>
-            <p class="text-3xl mb-8">
-              I was the first engineer hired at Everlane, and since then I've
-              taken on a number of roles, from tech lead to hiring manager to
-              store-builder to interim CTO.
-            </p>
+          </div>
 
-            <p class="mb-4">
-              At Everlane, everything from the user-facing e-commerce
-              experience, to the in-store Point of Sale system, to the content
-              mangement tooling, to the logistics and warehouse integration are
-              all built from scratch, in-house. Having that freedom allows us to
-              pull levers that other retailers simply can&rsquo;t, so it&rsquo;s
-              our job to think of how we can differentiate ourselves from the
-              rest of the pack.
-            </p>
+          <h3 class="text-3xl mb-8">Apple</h3>
 
-            <p class="mb-8">
-              To that end, it&rsquo;s hard to capture all that went into making
-              Everlane what it is today. But here are a few fun things that
-              have happened over the past ten years:
-            </p>
+          <p class="text-3xl mb-8">
+            I can’t really say what I work on at Apple, but I promise it’s
+            something&hellip; something special.
+          </p>
 
-            <ul class="list-circle mb-8 ml-8">
-              <li class="mb-4">
-                Oversaw numerous technical overhauls across the stack, from Rails to Backbone to React and Redux to Next and Apollo. From Sprockets to Grunt to Webpack.
-              </li>
+          <p class="mb-4">
+            I wasn’t always a Mac user, of course, but I knew three people that
+            were. They really knew how to use the computer, like truly
+            <i>use it</i> it. Their ideas transferred seamlessly onto the liquid
+            crystal display, which was encased in white plastic, cantilevered
+            over a messy desk. I was in love.
+          </p>
+          <p class="mb-4">
+            I got my first computer (an Apple Powerbook G4) as a senior in high
+            school. Peeling off the plastic wrap and separating the Aluminum
+            shell for the first time revealed a glowing world captured behind
+            glass. I spent 12, 14, 16 hours a day assimilating myself to this
+            new world, learning how to command it, learning how to build atop
+            it. I knew my future was encoded within that machine, I just had to
+            crack that code.
+          </p>
+          <p class="mb-4">
+            Back then technology was our lifeline. Millions of messages were
+            sent from tiny boxes to friends down the street. Punk rock and movie
+            soundtracks that were downsampled to 98kpbs and scattered across the
+            world were magically reconstituted over the network, overnight.
+            Hypertext became the youthful form of expression, allowing us to put
+            a beacon out into to the world and proclaim that we were at the edge
+            of something new.
+          </p>
+          <p class="mb-4">
+            Years flew by. I can’t describe it, other than to say it was
+            otherworldly but entirely natural.
+          </p>
+          <p class="mb-4">
+            I am who I am because of those three people. To some (very real)
+            extent, I got this job because of them. I thought it would connect
+            me to them, like I would be able learn and absorb some of their of
+            effortless cool when on the machine.
+          </p>
+          <p class="mb-4">I’m just trying to make it look easy. And fun.</p>
+        </div>
+      </div>
 
-              <li class="mb-4">
-                Partnered with the Creative and Design functions to build and templatize engaging and immersive marketing experiences like micro-sites, landing pages, and hyper-interactive features both online and in-store.
-              </li>
+      <figure class="col-span-12 my-4 border-white/25 border p-2">
+        <img
+          class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+          src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/27_989_tflwtg.jpg"
+        />
+        <figcaption class="text-xs text-gray-600 text-right">
+          Dario Agento, <i>Suspiria</i>, 1977
+        </figcaption>
+      </figure>
 
-              <li class="mb-4">
-                Developed styleguides and UI frameworks, which made building front-end features as easy and fun as playing with Lego.
-              </li>
+      <div class="grid grid-cols-12 gap-4 text-white" id="everlane">
+        <!-- Everlane -->
+        <div
+          class="antialiased md:col-span-8 col-span-10 col-span-10 col-start-2"
+        >
+          <img
+            class="mb-8"
+            src="https://res.cloudinary.com/listentoapril/image/upload//f_auto,q_auto,dpr_2,w_688/everlane-red_cukwa2.jpg"
+          />
+          <h3 class="text-3xl mb-8">Everlane</h3>
+          <ul class="mb-4">
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Augmented / Extended Reality
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              In-Store Technology
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Team Leading
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Interaction Design
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Javascript (Vanilla, React, Next.js, Backbone, jQuery, etc)
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
+            >
+              Ruby
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
+            >
+              Progressive Web Apps
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-2"
+            >
+              Motion Design
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Hiring
+            </li>
+          </ul>
+          <p class="text-3xl mb-8">
+            I was the first engineer hired at Everlane, and since then I've
+            taken on a number of roles, from tech lead to hiring manager to
+            store-builder to interim CTO.
+          </p>
 
-              <li class="mb-4">
-                Built a Point of Sale system used in Everlane's nine retail stores, which includes native-feeling experiences like scanning barcodes, swiping credit cards, and signing an iPad with your finger, all within the browser.
-              </li>
-              
-              <li class="mb-4">
-                Navigate and thrive amid ambiguity and shifting priorities by understanding risk, reward, return on investment, and minimum viable products.
-              </li>
+          <p class="mb-4">
+            At Everlane, everything from the user-facing e-commerce experience,
+            to the in-store Point of Sale system, to the content mangement
+            tooling, to the logistics and warehouse integration are all built
+            from scratch, in-house. Having that freedom allows us to pull levers
+            that other retailers simply can&rsquo;t, so it&rsquo;s our job to
+            think of how we can differentiate ourselves from the rest of the
+            pack.
+          </p>
 
-              <li class="mb-4">
-Stepped into an interim CTO role from August 2018 to January 2019.
-              </li>
+          <p class="mb-8">
+            To that end, it&rsquo;s hard to capture all that went into making
+            Everlane what it is today. But here are a few fun things that have
+            happened over the past ten years:
+          </p>
 
-              <li class="mb-4">Helped ideate, hire, and grow the engineering, product management, and digital design teams–from 2 to 25 people.</li>
-            </ul>
+          <ul class="list-circle mb-8 ml-8">
+            <li class="mb-4">
+              Oversaw numerous technical overhauls across the stack, from Rails
+              to Backbone to React and Redux to Next and Apollo. From Sprockets
+              to Grunt to Webpack.
+            </li>
 
+            <li class="mb-4">
+              Partnered with the Creative and Design functions to build and
+              templatize engaging and immersive marketing experiences like
+              micro-sites, landing pages, and hyper-interactive features both
+              online and in-store.
+            </li>
+
+            <li class="mb-4">
+              Developed styleguides and UI frameworks, which made building
+              front-end features as easy and fun as playing with Lego.
+            </li>
+
+            <li class="mb-4">
+              Built a Point of Sale system used in Everlane's nine retail
+              stores, which includes native-feeling experiences like scanning
+              barcodes, swiping credit cards, and signing an iPad with your
+              finger, all within the browser.
+            </li>
+
+            <li class="mb-4">
+              Navigate and thrive amid ambiguity and shifting priorities by
+              understanding risk, reward, return on investment, and minimum
+              viable products.
+            </li>
+
+            <li class="mb-4">
+              Stepped into an interim CTO role from August 2018 to January 2019.
+            </li>
+
+            <li class="mb-4">
+              Helped ideate, hire, and grow the engineering, product management,
+              and digital design teams–from 2 to 25 people.
+            </li>
+          </ul>
+
+          <!--
              <p class="mb-8">
               As they say, it's all indistinguishable from magic. As such, I've taken all of my coworkers LinkedIn bios, threw them into a computer-based blender, which applied it's own faulty conception of the English language, and out came this, a  more funny list of things I may or may not have done at Everlane.
               <br /><br />
@@ -371,103 +616,106 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
                 <li class="mb-4">We create everlane.com.</li>
               </ul>
             </p>
+          -->
 
+          <ul>
+            <li class="mb-16">
+              <figure class="mb-8">
+                <img
+                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/7e7601ad_b2b6_ssa77p.jpg"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  Point of Sale coutner at Everlane in San Francisco, 2019
+                </figcaption>
+                <p class="text-sm">
+                  I, unfortunately but hopefully understandbly, cannot show the
+                  Everlane Point of Sale system, but just trust me that it
+                  exists. It is woven entirely in Javascript (React, Redux) and
+                  is able to run in a browser or as a Progressive Web App on
+                  desktops, tablets, and phones. It's the glue the bonds the
+                  in-store customer experience, the omnichannel presence, and
+                  the back-of-house operations across our nine stores.
+                </p>
+              </figure>
+            </li>
 
-            <ul>
-              <li class="mb-16">
-                <figure class="mb-8">
-                  <img
-                    src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/7e7601ad_b2b6_ssa77p.jpg"
-                  />
-                  <figcaption
-                    class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                  >
-                    Point of Sale coutner at Everlane in San Francisco, 2019
-                  </figcaption>
-                  <p class="text-sm">
-                    I, unfortunately but hopefully understandbly, cannot show
-                    the Everlane Point of Sale system, but just trust me that it
-                    exists. It is woven entirely in Javascript (React, Redux)
-                    and is able to run in a browser or as a Progressive Web App
-                    on desktops, tablets, and phones. It's the glue the bonds
-                    the in-store customer experience, the omnichannel presence,
-                    and the back-of-house operations across our nine stores.
-                  </p>
-                </figure>
-              </li>
+            <li class="mb-16">
+              <figure>
+                <video
+                  controls
+                  loop
+                  muted
+                  poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif,q_auto,w_688,dpr_2/social-shop-proto_g5iyt1"
+                  src="https://res.cloudinary.com/listentoapril/video/upload/v1640939660/social-shop-proto_g5iyt1.mov"
+                  style="aspect-ratio: 1.74"
+                ></video>
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  Social Shopping (Realtime Emoji Reactions), March 2020
+                </figcaption>
+                <p class="text-sm">
+                  Ten days into March 2020&rsquo;s global lockdown, I spent a
+                  night building a feature that allowed customers to wave 👋 to
+                  other shoppers on that page. Hopefully we could surprise and
+                  delight some people.
+                </p>
+              </figure>
+            </li>
 
-              <li class="mb-16">
-                <figure>
-                  <video
-                    controls
-                    loop
-                    muted
-                    poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif,q_auto,w_688,dpr_2/social-shop-proto_g5iyt1"
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1640939660/social-shop-proto_g5iyt1.mov"
-                  ></video>
-                  <figcaption
-                    class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                  >
-                    Social Shopping (Realtime Emoji Reactions), March 2020
-                  </figcaption>
-                  <p class="text-sm">
-                    Ten days into March 2020&rsquo;s global lockdown, I spent a
-                    night building a feature that allowed customers to wave 👋
-                    to other shoppers on that page. Hopefully we could surprise
-                    and delight some people.
-                  </p>
-                </figure>
-              </li>
-
-              <li class="mb-16">
-                <figure>
-                  <img
+            <li class="mb-16">
+              <figure>
+                <img
                   loading="lazy"
-                    src="https://res.cloudinary.com/listentoapril/image/upload/v1640942845/56646008-9030e700-6633-11e9-8d03-755d51b616bc_hbrsc6.gif"
-                  />
-                  <figcaption
-                    class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                  >
-                    Sneaker Product Page, April 2019
-                  </figcaption>
-                  <p class="text-sm">
-                    The launch of Everlane&rsquo;s first sneaker brought with it
-                    the opportunity to experiment with a product page
-                    experience. This lo-res GIF was resuscitated from the depths
-                    of a decaying hard drive, suspended in a state of material
-                    erosion. It may be the only surviving record of some of the
-                    greatest maths I was ever able to pull off. It's complexity
-                    was hidden so well under a crystaline layer of polish.
-                  </p>
-                </figure>
-              </li>
+                  src="https://res.cloudinary.com/listentoapril/image/upload/v1640942845/56646008-9030e700-6633-11e9-8d03-755d51b616bc_hbrsc6.gif"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  Sneaker Product Page, April 2019
+                </figcaption>
+                <p class="text-sm">
+                  The launch of Everlane&rsquo;s first sneaker brought with it
+                  the opportunity to experiment with a product page experience.
+                  This lo-res GIF was resuscitated from the depths of a decaying
+                  hard drive, suspended in a state of material erosion. It may
+                  be the only surviving record of some of the greatest maths I
+                  was ever able to pull off. It's complexity was hidden so well
+                  under a crystaline layer of polish.
+                </p>
+              </figure>
+            </li>
 
-              <li class="mb-16">
-                <figure>
-                  <video
-                    controls
-                    loop
-                    muted
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1640921230/htp3_2_fmq7dt.mp4"
-                    poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif,q_auto,w_688,dpr_2/htp3_2_fmq7dt"
-                  ></video>
-                  <figcaption
-                    class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                  >
-                    Hack the Planet, team-based programming escape room,
-                    December 2019
-                  </figcaption>
-                  <p class="text-sm">
-                    2020 brought our first remote Holiday party. Rather than
-                    more smalltalk over Zoom, I made this realtime team-based
-                    escape room game, based around solving programming puzzles
-                    to advance through the rooms. The games cyberpunk-inspired
-                    lore was made complete with a glitching CRT terminal prompt,
-                    fuzzy answering logic, and so, _so_ much animation.
-                  </p>
-                </figure>
-              </li>
+            <li class="mb-16">
+              <figure>
+                <video
+                  controls
+                  loop
+                  muted
+                  src="https://res.cloudinary.com/listentoapril/video/upload/v1640921230/htp3_2_fmq7dt.mp4"
+                  poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif,q_auto,w_688,dpr_2/htp3_2_fmq7dt"
+                  style="aspect-ratio: 1.3725"
+                ></video>
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  Hack the Planet, team-based programming escape room, December
+                  2019
+                </figcaption>
+                <p class="text-sm">
+                  2020 brought our first remote Holiday party. Rather than more
+                  smalltalk over Zoom, I made this realtime team-based escape
+                  room game, based around solving programming puzzles to advance
+                  through the rooms. The games cyberpunk-inspired lore was made
+                  complete with a glitching CRT terminal prompt, fuzzy answering
+                  logic, and so, _so_ much animation.
+                </p>
+              </figure>
+            </li>
 
+            <!-- Real Nerds Only
               <li>
                 <figure>
                   <video
@@ -497,337 +745,164 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
                   </p>
                 </figure>
               </li>
-            </ul>
-          </div>
-
-          <figure class="col-span-12 my-4 border-white/25 border p-2">
-            <img
-              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/27_989_tflwtg.jpg"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Dario Agento, <i>Suspiria</i>, 1977
-            </figcaption>
-          </figure>
+            -->
+          </ul>
         </div>
 
-        <div class="grid grid-cols-12 gap-4 text-white">
-          <div class="antialiased md:col-span-8 col-span-10 col-start-2 row-span-1">
+        <div class="col-span-4 col-start-9 sticky top-0 h-max hidden md:block">
+          <textarea
+            id="second-canvas"
+            class="bg-white text-xl p-4 w-full text-black mb-4"
+            style="height: 480px"
+            contenteditable="false"
+          ></textarea>
+
+          <figure class="mb-4 border border-white/25 p-2">
             <img
-              class="mb-8"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/jpduo_fh4o02.jpg"
+              style="height: 235px"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/47654f6e0f84ffd51ccb0fc7eac8dcda_zjhlbj.jpg"
             />
-            <h3 class="text-3xl mb-8">CoderPad.io</h3>
-            <ul class="mb-4">
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Javascript (React, Redux)
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Firebase
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                Ruby
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                ANSI
-              </li>
-              <li
-                class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-              >
-                CodeMirror
-              </li>
-            </ul>
-            <p class="text-3xl mb-8">
-              I helped a friend build out their collaborative interviewing
-              environment, which makes for more human and less hostile
-              interviewing of software engineers.
-            </p>
+            <figcaption class="text-xs text-gray-600 text-right">
+              Kate Bush and Peter Gabriel, <i>Don&rsquo;t Give Up</i>, 1986
+            </figcaption>
+          </figure>
 
-            <p class="mb-8">
-              I worked on everything from building out an interactive interview
-              prep course for Facebook (think like, their own internal
-              LeetCode), to user-selectable color schemes for the in-browser
-              code editing and REPL environments, to general React-ification of
-              a fast moving codebase.
-            </p>
+          <blockquote
+            class="text-white opacity-30 hover:opacity-100 mb-4 dedent font-serif leading-5 transition duration-1000"
+          >
+            “When I was young there were beatniks. Hippies. Punks. Gangsters.
+            Now you're a hacktivist. Which I would probably be if I was 20.
+            Shuttin' down MasterCard. But there's no look to that lifestyle!
+            Besides just wearing a bad outfit with bad posture. Has WikiLeaks
+            caused a look? No! I'm mad about that. If your kid comes out of the
+            bedroom and says he just shut down the government, it seems to me he
+            should at least have an outfit for that.”
+            <cite>– John&nbsp;Waters</cite>
+          </blockquote>
 
-            <ul>
-              <li>
-                <figure>
-                  <img
-                  loading="lazy"
-                    src="https://res.cloudinary.com/listentoapril/video/upload/c_scale,w_700/v1640999530/cp_lurhza.gif"
-                  />
-                  <figcaption
-                    class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                  >
-                    CoderPad.io, theme switching, 2018
-                  </figcaption>
-                </figure>
-              </li>
-            </ul>
-          </div>
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny_civ9o6.jpg
+          "
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Jenny Holzer,from <i>The Living Series</i>, 1989
+            </figcaption>
+          </figure>
 
-          <div class="col-span-4 col-start-9 sticky top-0 h-max hidden md:block">
-            <textarea
-              id="second-canvas"
-              class="bg-white text-xl p-4 w-full text-black mb-4"
-              style="height: 480px"
-              contenteditable="false"
-            ></textarea>
-
+          <figure class="mb-4 border border-white/25 p-2">
+            <img
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1650608310/278714_puw4pm.jpg"
+              title=""
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Aaliyah for Tommy Hilfiger, 1996
+            </figcaption>
+          </figure>
+          <!-- 
             <figure class="mb-4 border border-white/25 p-2 mb-4">
               <img
-              loading="lazy"
                 class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/lain_tm3gf5.gif"
+                src="https://res.cloudinary.com/listentoapril/image/upload/v1640993029/OMD_HACIENDA_gypjoc.jpg"
               />
               <figcaption class="text-xs text-gray-600 text-right">
-                Serial Experiments Lain, 1998
+                Orchestral Manoeuvres in the Dark, Concert Flyer, 1983
               </figcaption>
             </figure>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-12 gap-4 text-white">
-          <div class="col-span-12 my-4">
-            <figure class="border p-2 border-white/25">
-              <img
-              loading="lazy"
-                class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-                src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/zombies_fgyegl.jpg"
-              />
-              <figcaption class="text-xs text-gray-600 text-right">
-                Makoto Nagahisa, <i>We Are Little Zombies</i>, 2019
-              </figcaption>
-            </figure>
-
-        </div>
-      </div>
-
-      <div class="grid grid-cols-12 gap-4 text-white">
-        <div class="antialiased md:col-span-8 col-span-10 col-start-2 row-span-1">
-          <img
-          loading="lazy"
-            class="mb-8"
-            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/bladerunner_buqf7l.jpg"
-          />
-          <h3 class="text-3xl mb-8">Yelp</h3>
-          <ul class="mb-4">
-            <li
-              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-            >
-              Javascript (the old kind)
-            </li>
-            <li
-              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-            >
-              Python
-            </li>
-            <li
-              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-            >
-              UI Design
-            </li>
-            <li
-              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-            >
-              User Experience
-            </li>
-            <li
-              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
-            >
-              Product Management
-            </li>
-          </ul>
-          <p class="text-3xl mb-8">
-            I worked on the front lines of local business review site, Yelp.com,
-            during its time of peak growth, which included international
-            expansion and the IPO.
-          </p>
-
-          <p class="mb-8">
-            In addition to the various front-end projects I worked on during
-            this time, I became first engineer to bridge the gap to work on UI
-            design and Product Management. In that capacity, I designed and
-            built Yelp&rsquo;s first modern mobile site.
-          </p>
-
-          <ul>
-            <li class="flex">
-              <figure class="w-1/3">
-                <img
-                loading="lazy"
-                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchsearch_cqjbnr.png"
-                />
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right"
-                >
-                  Mobile Search, Yelp, 2011
-                </figcaption>
-              </figure>
-
-              <figure class="w-1/3">
-                <img
-                loading="lazy"
-                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchbiz_uatjgz.png"
-                />
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right"
-                >
-                  Mobile Biz Listing, Yelp, 2011
-                </figcaption>
-              </figure>
-
-              <figure class="w-1/3">
-                <img
-                loading="lazy"
-                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchdeal_xmbvbc.png"
-                />
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right"
-                >
-                  Mobile Deal Page, Yelp, 2011
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-span-4 col-start-9 sticky top-0 hidden md:block">
-          <figure class="border border-white/25 p-2 mb-4">
+          -->
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
             <img
               loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny-holzer-protect-me-times-square_wo75gf.jpg"
-              title="the future is stupid"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/AC2K_CONRANS_LRG-575x442_jbtlbc.jpg"
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Jenny Holzer, <i>Protect me from what I want</i>, 1985
+              Art Club 2000, Untitled (Conrans I), 1992
             </figcaption>
           </figure>
 
+          <blockquote
+            class="text-white opacity-30 hover:opacity-100 mb-4 dedent font-serif leading-5 transition duration-1000"
+          >
+            &ldquo;Meanwhile, a decade after “Pattern Recognition,” K-HOLE, a
+            marketing think tank modelled on the one in the novel, popularized
+            Cayce’s fashion philosophy in the form of “normcore,” a
+            trend—forecasted, then real—based on the idea of secretive,
+            informed, intentional blankness. Normcore influenced design more
+            broadly, shaping the aesthetics of companies like Everlane and
+            Uniqlo. The boundary between fiction and reality turned out to be
+            even blurrier than Gibson had thought. He had rewritten the code
+            himself.&rdquo;
+            <cite
+              >– The&nbsp;New&nbsp;Yorker, How William Gibson Keeps His Science
+              Fiction Real, 2019</cite
+            >
+          </blockquote>
+
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/Screen_Shot_2022-01-03_at_12.04.12_PM_vcopu3.png"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              K-Hole, NormCore, 2013
+            </figcaption>
+          </figure>
+
+          <blockquote
+            class="my-8 dedent font-serif text-white opacity-30 hover:opacity-100 transition duration-1000 leading-5"
+          >
+            “There is nothing in the world that is not mysterious, but the
+            mystery is more evident in certain things than in others: in the
+            sea, in the eyes of the elders, in the color yellow, and in music.”
+            – <cite>Jorge&nbsp;Luis&nbsp;Borges</cite>
+          </blockquote>
+
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              title="Snow Beach by Ralph Lauren fire emoji fire emoji"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/tumblr_nbwd0r8sA61qh8y7qo1_400_nqf32k_tuwm23.gif"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Raewkon, <i>Can It Be All So Simple</i> music video, 1993
+            </figcaption>
+          </figure>
+
+          <!--
           <figure class="border border-white/25 p-2">
             <img
               loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/magiccapos_gxzfnx.jpg"
-              title="the future is stupid"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/featured00_1064x_l2og3v.jpg"
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Magic Cap Operating System, Susan Kare et al, 1994 
+              Christopher Gray for the Situationist International,
+              <i>Ten Days that Shook the University</i>, 1967
             </figcaption>
           </figure>
-        </div>
-
-        <div class="col-span-12 mt-8 mb-8">
-          <figure class="border p-2 border-white/25">
-            <img
-              loading="lazy"
-              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/50b8bb50-d92b-4e6a-b722-5decd8bf9923_full_qjrzgh.jpg"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Massive Attack, 2014
-            </figcaption>
-          </figure>
-        </div>
+        --></div>
       </div>
 
-      <div class="grid grid-cols-12 gap-4 text-white">
-        <div class="antialiased md:col-span-8 col-span-10 col-start-2 row-span-1">
-          <img
-            loading="lazy"
-            class="mb-8"
-            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/april-joe-chris-up-close-blue_ysufci.jpg"
-          />
-          <h3 class="text-3xl mb-8">April</h3>
-          <p class="text-3xl mb-8">
-            On fortunate nights, I am in a band with my best friends called
-            April. We released our first album, <i>This Is The New Trance</i>,
-            in 2021.
-          </p>
+      <figure class="col-span-12 my-4 border-white/25 border p-2">
+        <img
+          class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 flicker"
+          src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024,h_440,c_fill/port/d7hftxdivxxvm.cloudfront-1.jpg"
+        />
 
-          <p class="mb-8">
-            It all seems pretty textbook – five neighborhood friends that grew
-            up in the suburbs of San Diego, listening to punk music,
-            skateboarding, playing power chords and eating burritos. We could
-            have been Blink-182 if we were remotely talented&hellip;
-          </p>
+        <figcaption class="text-xs text-gray-600 text-right">
+          Todd Hido <i>Untitled #10789-2109</i>, 2012
+        </figcaption>
+      </figure>
 
-          <p class="mb-8">
-            But suffice it to say, we didn’t end up sounding like Blink-182.
-            That’s not for lack of desire, but a very palpable lack of ability.
-            Still, influence plays a significant role. While our music is often
-            without vocals, lyrics, percussion, or really anything that
-            traditionally gives songs “life,” we still want to make the listener
-            feel the same way they did the first time they heard
-            <i>Enema of the State</i>, or <i>Hounds of Love</i>, or
-            <i>My Beautiful Dark Twisted Fantasy</i>.
-          </p>
+      <div class="grid grid-cols-12 gap-4 text-white" id="april">
+        <!-- April -->
 
-          <p class="mb-8">
-            <img loading="lazy" class="inline-block" src="https://res.cloudinary.com/listentoapril/image/upload/v1650657182/cd_o0zyhs.gif" />
-            <a class="cursor-pointer underline text-blue-600" href="https://open.spotify.com/artist/0DYfiAbiFa8lOm5CyUrpfx?si=1EgziMnrQSOAsF2keGIXAA" target="_blank">Spotify</a> <span class="text-gray-800">|</span>
-            <a class="cursor-pointer underline text-blue-600" href="https://music.apple.com/us/album/this-is-the-new-trance/1557717227" target="_blank">Apple Music</a> <span class="text-gray-800">|</span>
-            <a class="cursor-pointer underline text-blue-600" href="https://listentoapril.bandcamp.com/" target="_blank">Bandcamp</a>
-          </p>
-
-          <ul>
-            <li>
-              <figure class="mb-8">
-                <video controls loop>
-                  <source
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330751/3_ze4vw4.mp4"
-                  />
-                </video>
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                >
-                  April,
-                  <i>Undercurrent / Watershed (ft. Mary Lattimore)</i> Instgram
-                  video, 2021
-                </figcaption>
-              </figure>
-
-              <figure class="mb-8">
-                <video controls loop>
-                  <source
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330726/5_jwqzm6.mp4"
-                  />
-                </video>
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                >
-                  April, <i>Nightshade / Moon Beam</i> Instgram video, 2021
-                </figcaption>
-              </figure>
-
-              <figure class="mb-8">
-                <video controls loop>
-                  <source
-                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330716/9_cap3_2_vnrjtm.mp4"
-                  />
-                </video>
-                <figcaption
-                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
-                >
-                  April, <i>Cap 3</i> Instgram video, 2021
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-span-4 col-start-9 sticky top-0 hidden md:block">
+        <div class="col-span-4 top-0 sticky hidden md:block h-max">
           <figure class="mb-4 border border-white/25 p-2">
             <img
               loading="lazy"
@@ -894,45 +969,282 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
               <i>Leaving the 20th Century</i>, 1974
             </figcaption>
           </figure>
+        </div>
 
-          <figure class="mb-4 border border-white/25 p-2">
+        <div
+          class="antialiased md:col-span-8 md:col-start-5 col-span-10 col-start-2"
+        >
+          <img
+            loading="lazy"
+            class="mb-8"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/april-joe-chris-up-close-blue_ysufci.jpg"
+          />
+          <h3 class="text-3xl mb-8">April</h3>
+          <p class="text-3xl mb-8">
+            On fortunate nights, I am in a band with my best friends called
+            April. We released our first album, <i>This Is The New Trance</i>,
+            in 2021.
+          </p>
+
+          <p class="mb-8">
+            It all seems pretty textbook – five neighborhood friends that grew
+            up in the suburbs of San Diego, listening to punk music,
+            skateboarding, playing power chords and eating burritos. We could
+            have been Blink-182 if we were remotely talented&hellip;
+          </p>
+
+          <p class="mb-8">
+            But suffice it to say, we didn’t end up sounding like Blink-182.
+            That’s not for lack of desire, but a very palpable lack of ability.
+            Still, influence plays a significant role. While our music is often
+            without vocals, lyrics, percussion, or really anything that
+            traditionally gives songs “life,” we still want to make the listener
+            feel the same way they did the first time they heard
+            <i>Enema of the State</i>, or <i>Hounds of Love</i>, or
+            <i>My Beautiful Dark Twisted Fantasy</i>.
+          </p>
+
+          <p class="mb-8">
             <img
               loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/Screen_Shot_2022-01-03_at_12.02.46_PM_ijtxkx.png"
+              class="inline-block"
+              style="width: auto"
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1650657182/cd_o0zyhs.gif"
             />
-            <figcaption class="text-xs text-gray-600 text-right">
-              K-Hole, NormCore, 2013
-            </figcaption>
-          </figure>
+            <a
+              class="cursor-pointer underline text-blue-600"
+              href="https://open.spotify.com/artist/0DYfiAbiFa8lOm5CyUrpfx?si=1EgziMnrQSOAsF2keGIXAA"
+              target="_blank"
+              >Spotify</a
+            >
+            <span class="text-gray-800">|</span>
+            <a
+              class="cursor-pointer underline text-blue-600"
+              href="https://music.apple.com/us/album/this-is-the-new-trance/1557717227"
+              target="_blank"
+              >Apple Music</a
+            >
+            <span class="text-gray-800">|</span>
+            <a
+              class="cursor-pointer underline text-blue-600"
+              href="https://listentoapril.bandcamp.com/"
+              target="_blank"
+              >Bandcamp</a
+            >
+          </p>
 
+          <ul>
+            <li>
+              <figure class="mb-8">
+                <video controls loop style="aspect-ratio: 1">
+                  <source
+                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330751/3_ze4vw4.mp4"
+                  />
+                </video>
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  April,
+                  <i>Undercurrent / Watershed (ft. Mary Lattimore)</i> Instagram
+                  video, 2021
+                </figcaption>
+              </figure>
+
+              <figure class="mb-8">
+                <video controls loop style="aspect-ratio: 1">
+                  <source
+                    src="https://res.cloudinary.com/listentoapril/video/upload/v1641330726/5_jwqzm6.mp4"
+                  />
+                </video>
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  April, <i>Nightshade / Moon Beam</i> Instagram video, 2021
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-span-12 mb-8">
+        <figure class="border p-2 border-white/25">
+          <img
+            class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/https___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_38d7df8f-0da5-4fb5-92fc-f1c0294961c3_2560x1600_bjan9p-crop_vffc9u.jpg"
+          />
+          <figcaption class="text-xs text-gray-600 text-right">
+            The Wachowskis, <i>The Matrix</i>, 1999
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 text-white" id="coderpad">
+        <!-- CoderPad -->
+        <div class="antialiased md:col-span-8 col-span-10 col-start-2">
+          <img
+            class="mb-8"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/jpduo_fh4o02.jpg"
+          />
+          <h3 class="text-3xl mb-8">CoderPad.io</h3>
+          <ul class="mb-4">
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Javascript (React, Redux)
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Firebase
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Ruby
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              ANSI
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              CodeMirror
+            </li>
+          </ul>
+          <p class="text-3xl mb-8">
+            I helped a friend build out their collaborative interviewing
+            environment, which makes for more human and less hostile
+            interviewing of software engineers.
+          </p>
+
+          <p class="mb-8">
+            I worked on everything from building out an interactive interview
+            prep course for Facebook (think like, their own internal LeetCode),
+            to user-selectable color schemes for the in-browser code editing and
+            REPL environments, to general React-ification of a fast moving
+            codebase.
+          </p>
+
+          <ul>
+            <li>
+              <figure>
+                <img
+                  loading="lazy"
+                  src="https://res.cloudinary.com/listentoapril/video/upload/c_scale,w_700/v1640999530/cp_lurhza.gif"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right mb-2"
+                >
+                  CoderPad.io, theme switching, 2018
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-4 col-start-9 sticky top-0 h-max hidden md:block">
           <figure class="mb-4 border border-white/25 p-2 mb-4">
             <img
               loading="lazy"
               class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/v1641009452/hands_ihzwsz.gif"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/lain_tm3gf5.gif"
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Portishead, <i>Only You</i> by Chris Cunningham, 2005
+              Serial Experiments Lain, 1998
             </figcaption>
           </figure>
-        </div>
 
-        <div class="col-span-12 mb-8">
-          <figure class="border p-2 border-white/25">
-            <img
-              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/https___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_38d7df8f-0da5-4fb5-92fc-f1c0294961c3_2560x1600_bjan9p-crop_vffc9u.jpg"
-            />
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <video
+              controls
+              poster="https://res.cloudinary.com/listentoapril/video/upload/e_preview,f_gif/yt5s.com-Portishead_In_Portishead_-_The_Rip_04_current_tv_High_Quality_360p_wjfkwo"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              style="aspect-ratio: 1.762"
+            >
+              <source
+                src="https://res.cloudinary.com/listentoapril/video/upload/v1641282819/yt5s.com-Portishead_In_Portishead_-_The_Rip_04_current_tv_High_Quality_360p_wjfkwo.mp4"
+                type="video/mp4"
+              />
+            </video>
             <figcaption class="text-xs text-gray-600 text-right">
-              The Wachowskis, <i>The Matrix</i>, 1999
+              Portishead, <i>The Rip</i>, 2007
             </figcaption>
           </figure>
         </div>
       </div>
 
       <div class="grid grid-cols-12 gap-4 text-white">
-        <div class="antialiased md:col-span-8 col-span-10 col-start-2 row-span-1">
+        <div class="col-span-12 my-4">
+          <figure class="border p-2 border-white/25">
+            <img
+              loading="lazy"
+              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/zombies_fgyegl.jpg"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Makoto Nagahisa, <i>We Are Little Zombies</i>, 2019
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 text-white" id="chimera">
+        <div class="col-span-4 top-0 sticky hidden md:block h-max">
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              title="Do you know anything about&hellip; witches?"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/suspira_zfmrk8.gif"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Dario Agento, <i>Suspiria</i>, 1977
+            </figcaption>
+          </figure>
+
+          <figure class="mb-4 border border-white/25 p-2">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/ConsciousRareHound-size_restricted_shx9wh.gif"
+              title="i feeeeeel love i feel love i feeel love"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Donna Summer, <i>I Feel Love</i>, 1978
+            </figcaption>
+          </figure>
+
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              title="&ldquo;Band of Outsiders&rdquo;"
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1640926854/136850631_8fe0276e3c_tclcq1.jpg"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Mariah Carey, 2005
+            </figcaption>
+          </figure>
+
+          <figure class="mb-4 border border-white/25 p-2 mb-4">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              title="&ldquo;Band of Outsiders&rdquo;"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/girl-army-photography-justine-kurland-dutch-32-march-april-2001-1541_o_ji2lcl.jpg"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Justine Kurland, <i>Girl Army</i> ,2001
+            </figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="antialiased md:col-span-8 md:col-start-5 col-span-10 col-start-2"
+        >
           <img
             loading="lazy"
             class="mb-8"
@@ -940,13 +1252,26 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
           />
           <h3 class="text-3xl mb-8">Chimera</h3>
           <p class="text-3xl mb-8">
-            In the height of the COVID-19 pandemic, my friends and I thought it would be a fun idea to build a physical retail store.
+            In the height of the COVID-19 pandemic, my friends and I thought it
+            would be a fun idea to build a physical retail store.
           </p>
 
           <p class="mb-8">
-            We set up a small glassbox storefront selling a curated selection of records, vintage clothing, leftist literature, and strange cacti.
-            While it was a fun experiment for the year, we eventually started to miss our weekend mornings. But in that fleeting moment of small-business ownership,
-            we felt like we built a space that brought a smile to a few faces and that made all the taxes worth it. And we have an <a href="https://instagram.com/chimera.house" target="_blank" class="cursor-pointer underline text-blue-600">Instagram account</a> still active, living its days out as a memoryhole to a time we built something from nothing.
+            We set up a small glassbox storefront selling a curated selection of
+            records, vintage clothing, leftist literature, and strange cacti.
+            While it was a fun experiment for the year, we eventually started to
+            miss our weekend mornings. But in that fleeting moment of
+            small-business ownership, we felt like we built a space that brought
+            a smile to a few faces and that made all the taxes worth it. And we
+            have an
+            <a
+              href="https://instagram.com/chimera.house"
+              target="_blank"
+              class="cursor-pointer underline text-blue-600"
+              >Instagram account</a
+            >
+            still active, living its days out as a memoryhole to a time we built
+            something from nothing.
           </p>
 
           <ul>
@@ -1003,82 +1328,176 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
             </li>
           </ul>
         </div>
+      </div>
 
-        <div class="col-span-4 col-start-9 sticky top-0 hidden md:block">
-          <figure class="mb-4 border border-white/25 p-2 mb-4">
-            <img
-              loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              title="Do you know anything about&hellip; witches?"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/suspira_zfmrk8.gif"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Dario Agento, <i>Suspiria</i>, 1977
-            </figcaption>
-          </figure>
+      <div class="col-span-12 mt-8 mb-8">
+        <figure class="border p-2 border-white/25">
+          <img
+            loading="lazy"
+            class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/segacropextend_fpe2jf.jpg"
+          />
+          <figcaption class="text-xs text-gray-600 text-right">
+            Sega Digitizer System, 1986
+          </figcaption>
+        </figure>
+      </div>
 
-          <figure class="mb-4 border border-white/25 p-2">
-            <img
-              loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/ConsciousRareHound-size_restricted_shx9wh.gif"
-              title="i feeeeeel love i feel love i feeel love"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Donna Summer, <i>I Feel Love</i>, 1978
-            </figcaption>
-          </figure>
+      <div class="grid grid-cols-12 gap-4 text-white" id="yelp">
+        <!-- Yelp -->
+        <div class="antialiased md:col-span-8 col-span-10 col-start-2">
+          <img
+            loading="lazy"
+            class="mb-8"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_688/bladerunner_buqf7l.jpg"
+          />
+          <h3 class="text-3xl mb-8">Yelp</h3>
+          <ul class="mb-4">
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Javascript (the old kind)
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Python
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              UI Design
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              User Experience
+            </li>
+            <li
+              class="border rounded-full inline-block px-3 py-2 text-xs mr-2 mb-4"
+            >
+              Product Management
+            </li>
+          </ul>
+          <p class="text-3xl mb-8">
+            I worked on the front lines of local business review site, Yelp.com,
+            during its time of peak growth, which included international
+            expansion and the IPO.
+          </p>
 
-          <figure class="mb-4 border border-white/25 p-2 mb-4">
-            <img
-              loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              title="&ldquo;Band of Outsiders&rdquo;"
-              src="https://res.cloudinary.com/listentoapril/image/upload/v1640926854/136850631_8fe0276e3c_tclcq1.jpg"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Mariah Carey, 2005
-            </figcaption>
-          </figure>          
+          <p class="mb-8">
+            In addition to the various front-end projects I worked on during
+            this time, I became first engineer to bridge the gap to work on UI
+            design and Product Management. In that capacity, I designed and
+            built Yelp&rsquo;s first modern mobile site.
+          </p>
 
-          <figure class="mb-4 border border-white/25 p-2 mb-4">
-            <img
-              loading="lazy"
-              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
-              title="&ldquo;Band of Outsiders&rdquo;"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/girl-army-photography-justine-kurland-dutch-32-march-april-2001-1541_o_ji2lcl.jpg"
-            />
-            <figcaption class="text-xs text-gray-600 text-right">
-              Justine Kurland, <i>Girl Army</i> ,2001
-            </figcaption>
-          </figure>
+          <ul>
+            <li class="flex">
+              <figure class="w-1/3">
+                <img
+                  loading="lazy"
+                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchsearch_cqjbnr.png"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right"
+                >
+                  Mobile Search, Yelp, 2011
+                </figcaption>
+              </figure>
+
+              <figure class="w-1/3">
+                <img
+                  loading="lazy"
+                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchbiz_uatjgz.png"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right"
+                >
+                  Mobile Biz Listing, Yelp, 2011
+                </figcaption>
+              </figure>
+
+              <figure class="w-1/3">
+                <img
+                  loading="lazy"
+                  src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2/touchdeal_xmbvbc.png"
+                />
+                <figcaption
+                  class="bg-black text-xs text-gray-600 pt-2 text-right"
+                >
+                  Mobile Deal Page, Yelp, 2011
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </div>
-        
-        <div class="col-span-12 mt-8 mb-8">
-          <figure class="border p-2 border-white/25">
+
+        <div class="col-span-4 col-start-9 sticky top-0 h-max hidden md:block">
+          <figure class="border border-white/25 p-2 mb-4">
             <img
               loading="lazy"
-              class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
-              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/segacropextend_fpe2jf.jpg"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/jenny-holzer-protect-me-times-square_wo75gf.jpg"
+              title="the future is stupid"
             />
             <figcaption class="text-xs text-gray-600 text-right">
-              Sega Digitizer System, 1986
+              Jenny Holzer, <i>Protect me from what I want</i>, 1985
+            </figcaption>
+          </figure>
+
+          <figure class="border border-white/25 p-2">
+            <img
+              loading="lazy"
+              class="mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000 cursor-help"
+              src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_320/magiccapos_gxzfnx.jpg"
+              title="the future is stupid"
+            />
+            <figcaption class="text-xs text-gray-600 text-right">
+              Magic Cap Operating System, Susan Kare et al, 1994
             </figcaption>
           </figure>
         </div>
       </div>
 
-      <div class="grid grid-cols-12 gap-4 text-white">
-        <div class="antialiased md:col-span-8 md:col-start-3 col-span-10 col-start-2 row-span-1">          
+      <div class="col-span-12 mt-8 mb-8">
+        <figure class="border p-2 border-white/25">
+          <img
+            loading="lazy"
+            class="flicker mb-2 hover:grayscale-0 opacity-30 hover:opacity-100 transition duration-1000"
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_1024/50b8bb50-d92b-4e6a-b722-5decd8bf9923_full_qjrzgh.jpg"
+          />
+          <figcaption class="text-xs text-gray-600 text-right">
+            Massive Attack, 2014
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 text-white" id="outro">
+        <div
+          class="antialiased md:col-span-8 md:col-start-3 col-span-10 col-start-2 row-span-1"
+        >
           <p class="text-3xl mb-8">
-            Incidentally, an internet-stranger sent me an email about this website. Their words were heartwarming, if not completely unexpected.
-            And since I need some way to close out this digital collage, I thought why include their affirming words to this memory bank I&rsquo;ve cobbled together:
+            Incidentally, an internet-stranger sent me an email about this
+            website. Their words were heartwarming, if not completely
+            unexpected. And since I need some way to close out this digital
+            collage, I thought why include their affirming words to this memory
+            bank I&rsquo;ve cobbled together:
           </p>
 
           <blockquote class="font-serif text-xl mb-16">
-            —<br/><br/>
-            I wanted to thank you.<br /><br />It's been a long time since I've landed on a web page that is so unapologetic about its emotional core…Until recently, I associated programming exclusively with computation, programming which basically exists to do a thing - as a means to an end. And it still is that most of the time. That's fine. Still, it's easy to forget that it can also be art, and deliver a soulful experience, which is the ephemeral thing I've been trying to capture since entering tech.
-            <br /><br/>Hearing you - someone - even if a complete stranger - articulate those feelings as well, made me really happy. You're so unapologetic about how personal your motivations are, even if they are secret.
+            —<br /><br />
+            I wanted to thank you.<br /><br />It's been a long time since I've
+            landed on a web page that is so unapologetic about its emotional
+            core…Until recently, I associated programming exclusively with
+            computation, programming which basically exists to do a thing - as a
+            means to an end. And it still is that most of the time. That's fine.
+            Still, it's easy to forget that it can also be art, and deliver a
+            soulful experience, which is the ephemeral thing I've been trying to
+            capture since entering tech. <br /><br />Hearing you - someone -
+            even if a complete stranger - articulate those feelings as well,
+            made me really happy. You're so unapologetic about how personal your
+            motivations are, even if they are secret.
           </blockquote>
 
           <!--
@@ -1090,27 +1509,55 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
       </div>
 
       <div class="grid grid-cols-12 gap-4 text-white mt-8 mb-16">
-        <div class="personal-photo col-span-10 col-start-2  md:col-span-4 px-4 aspect-portait bg-cover flex items-center justify-center text-center bg-center" style="background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);">
+        <div
+          class="personal-photo col-span-10 col-start-2 md:col-span-4 px-4 aspect-portait bg-cover flex items-center justify-center text-center bg-center"
+          style="
+            background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);
+          "
+        >
           <h4 class="text-2xl font-bold uppercase">SLOW PROCESSION</h4>
         </div>
 
-        <div class="personal-photo hidden md:flex col-span-4 px-4 aspect-portait bg-cover items-center justify-center text-center bg-center " style="background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);">
+        <div
+          class="personal-photo hidden md:flex col-span-4 px-4 aspect-portait bg-cover items-center justify-center text-center bg-center"
+          style="
+            background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);
+          "
+        >
           <h4 class="text-2xl font-bold uppercase">SLOW PROCESSION</h4>
         </div>
 
-        <div class="personal-photo hidden md:flex  col-span-4 px-4 aspect-portait bg-cover items-center justify-center text-center bg-center" style="background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);">
+        <div
+          class="personal-photo hidden md:flex col-span-4 px-4 aspect-portait bg-cover items-center justify-center text-center bg-center"
+          style="
+            background-image: url(https://res.cloudinary.com/listentoapril/image/upload/v1646728195/0104E7FB-5DDF-4434-BD60-6DD1BE5E7754_1_105_c_aoa5qn.jpg);
+          "
+        >
           <h4 class="text-2xl font-bold uppercase">SLOW PROCESSION</h4>
         </div>
       </div>
 
-   
       <div class="grid grid-cols-12 gap-4 text-white mt-8">
         <div class="col-span-12 text-center">
-            <a class="text-blue-600 cursor-pointer underline text-xs inline-block mb-2" href="mailto:jeffmicklos@gmail.com">jeffmicklos at gmail dot com</a><br />
-            <img loading="lazy" class="mb-8 w-32 inline-block mb-32" src="https://res.cloudinary.com/listentoapril/image/upload/v1650666592/mademacspinhoriz_l6lyta.gif" />
-            <textarea id="footer-sentence" class="bg-black text-center w-full mb-32 antialiased text-sm" contenteditable="false" style="pointer-events: none; resize: none;""></textarea>
+          <a
+            class="text-blue-600 cursor-pointer underline text-xs inline-block mb-2"
+            href="mailto:jeffmicklos@gmail.com"
+            >jeffmicklos at gmail dot com</a
+          ><br />
+          <img
+            loading="lazy"
+            class="mb-8 w-32 inline-block mb-32"
+            src="https://res.cloudinary.com/listentoapril/image/upload/v1650666592/mademacspinhoriz_l6lyta.gif"
+          />
+          <textarea
+            id="footer-sentence"
+            class="bg-black text-center w-full mb-32 antialiased text-sm"
+            contenteditable="false"
+            style="pointer-events: none; resize: none"
+          ></textarea>
         </div>
       </div>
+    </div>
 
     <script
       async
@@ -1144,14 +1591,17 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
       }
 
       function shuffle(array) {
-        let currentIndex = array.length,  randomIndex;
+        let currentIndex = array.length,
+          randomIndex;
 
         while (currentIndex != 0) {
           randomIndex = Math.floor(Math.random() * currentIndex);
           currentIndex--;
 
           [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+            array[randomIndex],
+            array[currentIndex],
+          ];
         }
 
         return array;
@@ -1191,7 +1641,7 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         },
         SELECT_AND_DELETE: async function (count, element) {
           //container.focus();
-          if(element.setSelectionRange) {
+          if (element.setSelectionRange) {
             element.setSelectionRange(
               element.value.length - count,
               element.value.length,
@@ -1266,8 +1716,8 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         '\n',
         '\n',
         [Command.SLEEP, 1000],
-        '🌲',
-        '🌲🌲🌲🌲🌲🌲🌲',
+        //'🌲',
+        //'🌲🌲🌲🌲🌲🌲🌲',
         '\n',
         '\n',
         '\n',
@@ -1343,40 +1793,36 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         '\n',
         [Command.SLEEP, 600],
         'I know, it’s my job to be good at computer stuff, so it’s obvious that i at least like them.',
-        "\n",
-        "\n",
-        "what I mean is that we’re expected to be so professional about it more or less all the time.",
-        "\n",
-        "\n",
-        "\n",
-        "\n",
-        "There’s a primordial joy in creating in a medium as new and, frankly, insane as the internet.",
-        "\n",
-        "\n",
-        "It’s like we’re scooping up raw gobs of molten granite and sculpting David by flinging them at a bust.",
-        "\n",
-        "\n",
-        "\n",
-        "\n",
+        '\n',
+        '\n',
+        'what I mean is that we’re expected to be so professional about it more or less all the time.',
+        '\n',
+        '\n',
+        '\n',
+        '\n',
+        'There’s a primordial joy in creating in a medium as new and, frankly, insane as the internet.',
+        '\n',
+        '\n',
+        'It’s like we’re scooping up raw gobs of molten granite and sculpting David by flinging them at a bust.',
+        '\n',
+        '\n',
+        '\n',
+        '\n',
         [Command.SLEEP, 600],
-        "I’m just as surprised as you that anything works."
-      ]
+        'I’m just as surprised as you that anything works.',
+      ];
 
       const footerSentences = [
-        "every bad act is stored on a magnetic tape ",
-        "which we retain ",
-        "kept in a secret vault ",
-        "and evaluated, ",
-        "repeated and repeated ",
-        "with your code name at the top of the file. ",
-        "to be reviewed at your departure ",
-        "for the pearly gates.",
-        "..."
-    ]
-   
-      async function canContinue() {
-        return new Promise((resolve, reject) => {});
-      }
+        'every bad act is stored on a magnetic tape ',
+        'which we retain ',
+        'kept in a secret vault ',
+        'and evaluated, ',
+        'repeated and repeated ',
+        'with your code name at the top of the file. ',
+        'to be reviewed at your departure ',
+        'for the pearly gates.',
+        '...',
+      ];
 
       function initiateTypeScript(strings, container) {
         let paused = false;
@@ -1428,7 +1874,6 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
           },
           {
             root: null,
-            rootMargin: '0px',
             threshold: 0.25,
           },
         );
@@ -1436,25 +1881,51 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         observer.observe(container);
       }
 
+      let IS_SCROLLING = false;
+      let scrollTimeout;
+      document.querySelector('nav').addEventListener('click', (event) => {
+        clearTimeout(scrollTimeout);
+
+        if (event.target.tagName === 'A') {
+          event.preventDefault();
+
+          window.scrollTo({
+            top:
+              window.scrollY +
+              document
+                .querySelector(event.target.getAttribute('href'))
+                .getBoundingClientRect().top -
+              16,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+
+        scrollTimeout = setTimeout(() => (IS_SCROLLING = false), 400);
+      });
+
       initiateTypeScript(introScript, document.getElementById('canvas'));
-      initiateTypeScript(secondScript, document.getElementById('second-canvas'));
-      
-      const footer = document.getElementById('footer-sentence')
+      initiateTypeScript(
+        secondScript,
+        document.getElementById('second-canvas'),
+      );
+
+      const footer = document.getElementById('footer-sentence');
       async function runFooter() {
-        for(let i = 0; i < footerSentences.length; i++) {
-          const letters = footerSentences[i].split('')
-          for(let x = 0; x < letters.length; x++) {
+        for (let i = 0; i < footerSentences.length; i++) {
+          const letters = footerSentences[i].split('');
+          for (let x = 0; x < letters.length; x++) {
             await typeLetter(letters[x], footer);
-            await sleep(randomInRange(10, 100)); 
+            await sleep(randomInRange(10, 100));
           }
 
-          await Command.SELECT_AND_DELETE(footerSentences[i].length, footer)
+          await Command.SELECT_AND_DELETE(footerSentences[i].length, footer);
           await sleep(randomInRange(10, 100));
         }
-        runFooter()
+        runFooter();
       }
 
-      runFooter()
+      runFooter();
 
       setInterval(function () {
         var allImagesToBick = document.querySelectorAll('.flicker');
@@ -1536,8 +2007,7 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         '---_0083_dfgvqz.jpg',
         '---_0163_vyueza.jpg',
         'dia_0014_v2bs70.jpg',
-      ])
-      
+      ]);
 
       const thoughts = shuffle([
         'What will we mean?\nNothing.\nNothing.\nNothing.',
@@ -1553,18 +2023,85 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         'Impermanence',
         'am i still too young?',
         'culture is plastic',
-      ])
+      ]);
 
-      const photos = document.querySelectorAll('.personal-photo')
-      photos.forEach(photo => {
-        photo.querySelector('h4').innerText = thoughts.pop()
-        photo.style.backgroundImage = `url(https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_360,e_grayscale/${personalPhotos.pop()})`
-      })
+      const photos = document.querySelectorAll('.personal-photo');
+      photos.forEach((photo) => {
+        photo.querySelector('h4').innerText = thoughts.pop();
+        photo.style.backgroundImage = `url(https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_360,e_grayscale/${personalPhotos.pop()})`;
+      });
+
+      const sections = [...document.querySelectorAll('nav a')].map((a) =>
+        document.querySelector(a.getAttribute('href')),
+      );
+
+      window.visible = new Map();
+
+      sections.forEach((section) => {
+        let observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const link = document.querySelector(
+                `a[href="#${entry.target.id}"]`,
+              );
+
+              const listener = (event) => {
+                const bounds = entry.target.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                let amount;
+                let fromTop = (windowHeight - bounds.top) / windowHeight;
+                let fromBottom = (windowHeight - bounds.bottom) / windowHeight;
+
+                if (fromBottom > 1 && fromTop > 1) {
+                  amount = 0;
+                } else if (fromBottom > 0) {
+                  amount = Math.abs(1 - fromBottom);
+                } else {
+                  amount = fromTop;
+                }
+
+                /*
+                      let start = 30;
+                      let end = 100;
+                      amount = start * Math.pow(end / start, amount);
+                      */
+
+                link.style.opacity = Math.max(0.33, amount.toPrecision(2));
+              };
+
+              if (entry.isIntersecting && !visible.has(entry.target)) {
+                window.addEventListener('scroll', listener);
+                visible.set(entry.target, listener);
+              } else {
+                window.removeEventListener(
+                  'scroll',
+                  visible.get(entry.target, listener),
+                );
+
+                visible.delete(entry.target);
+              }
+            });
+          },
+          {
+            root: null,
+            threshold: 0.05,
+          },
+        );
+
+        observer.observe(section);
+      });
+
+      /*
+            [...document.querySelectorAll('img')].map(img => {
+              return `img[src="${img.src}"] {aspect-ratio: ${img.width / img.height}}`
+            }).join("")
+            */
     </script>
-  </body>
 
-  <!--
+    <!--
       if you can make it here, you can make it anywhere
       jeffmicklos@gmail.com
     -->
+  </body>
 </html>

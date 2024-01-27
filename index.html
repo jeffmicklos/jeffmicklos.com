@@ -2035,6 +2035,10 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
         document.querySelector(a.getAttribute('href')),
       );
 
+      function easeOutQuad(x) {
+        return 1 - (1 - x) * (1 - x);
+      }
+
       window.visible = new Map();
 
       sections.forEach((section) => {
@@ -2044,18 +2048,6 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
               const link = document.querySelector(
                 `a[href="#${entry.target.id}"]`,
               );
-
-              function easeInOutQuad(t) {
-                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-              }
-
-              function easeInExpo(x) {
-                return x === 0 ? 0 : Math.pow(2, 10 * x - 10);
-              }
-
-              function easeOutQuad(x) {
-                return 1 - (1 - x) * (1 - x);
-              }
 
               const listener = (event) => {
                 const bounds = entry.target.getBoundingClientRect();
@@ -2067,38 +2059,20 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
 
                 let start = 20;
                 let end = 100;
-                let k = 2;
-
-                console.log(fromBottom, fromTop);
 
                 if (fromBottom < 0 && fromTop > 1) {
-                  console.log('full screen!');
                   amount = 1;
                 } else if (fromBottom > 1 && fromTop > 1) {
                   amount = 0;
                 } else if (fromBottom > 0) {
                   amount = Math.abs(1 - fromBottom);
-                  /*  amount =
-                    (start * Math.pow(amount / start, 1 / (end - start))) / 100;*/
-                  // console.log('from bottom', amount);
-                  /// amount = (start + Math.pow(amount / 100, k) * (end - start)) / 100;
                 } else {
                   amount = fromTop;
-
-                  //console.log('from top', amount);
-
-                  // amount =(start + Math.pow(amount / 100, 1 / k) * (end - start)) / 100;
                 }
 
-                // Apply easing function to the percentage
                 const easedPercentage = easeOutQuad(amount);
-
-                //console.log('easing', easedPercentage);
-
                 const range = end - start;
                 amount = start + range * easedPercentage;
-
-                //console.log('coerced', amount);
 
                 link.style.opacity = Math.max(
                   start / 100,
@@ -2115,10 +2089,7 @@ Manage the team forecasting with React/Redux on the front-end, and vision.
                   visible.get(entry.target, listener),
                 );
 
-                console.log('stop listening to', entry.target.id, 20 / 100);
-
                 link.style.opacity = 20 / 100;
-
                 visible.delete(entry.target);
               }
             });

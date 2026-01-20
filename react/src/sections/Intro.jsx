@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar';
 import HeadingImage from '../HeadingImage';
 import Paragaph from '../Paragraph';
 import Tip from '../Tooltip';
+import TextChanger from '../TextChanger';
 
 export default function Intro(props) {
   return (
@@ -61,8 +62,32 @@ export default function Intro(props) {
           The algorithm was recycling the same 10 bands, over and over, for
           weeks. They all sounded the same, the sound of wide-eyed suburbia and
           carefree youth crushed by anxiety. It wasn’t bad, I just had no idea
-          why it was being forced upon me. I hit skip as often as I could, until
-          Stereolab or Claire Rousay eventually came up.
+          why it was being forced upon me. I hit skip as often as I could, until{' '}
+          <TextChanger
+            options={[
+              'Claire Rousay',
+              'Stereolab',
+              'Boards of Canada',
+              'Autechre',
+              'Burial',
+              'RZA',
+              'Orchestral Manoeuvres in the Dark',
+              'Section 25',
+              'The Durutti Column',
+              'Dry Cleaning',
+              'Tyler, The Creator',
+              'Charli XCX',
+              'Broadcast',
+              'Joyce Manor',
+              'The Smiths',
+              'Perfect Pussy',
+              'Refused',
+              'Pulp',
+            ]}
+          >
+            Stereolab
+          </TextChanger>{' '}
+          eventually came up.
         </Paragaph>
 
         <Paragaph>

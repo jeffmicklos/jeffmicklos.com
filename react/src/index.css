@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --font-sans: Helvetica, Arial, sans-serif;
+}
+
+@layer utilities {
+  /* Mobile default: header + body full width, sidebar hidden */
+  section.layout-section {
+    @apply grid gap-4 text-white mb-8;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'body';
+  }
+
+  section.layout-section > :first-child {
+    grid-area: header;
+  }
+  section.layout-section > :nth-child(2) {
+    grid-area: sidebar;
+    @apply hidden;
+  }
+  section.layout-section > :nth-child(3) {
+    grid-area: body;
+    min-width: 0;
+  }
+
+  /* md+ : show sidebar + alternate */
+  @media (min-width: 768px) {
+    section.layout-section {
+      grid-template-columns: 320px minmax(0, 1fr);
+      grid-template-areas:
+        'header header'
+        'sidebar body';
+    }
+
+    section.layout-section > :nth-child(2) {
+      @apply block;
+    }
+
+    section.layout-section:nth-of-type(even) {
+      grid-template-columns: minmax(0, 1fr) 320px;
+      grid-template-areas:
+        'header header'
+        'body sidebar';
+    }
+  }
+}
+/* 
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+.exposure {
+  animation: exposure 150ms infinite;
+}
+
+@keyframes exposure {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  39% {
+    opacity: 0.03;
+  }
+
+  45% {
+    opacity: 0.1;
+  }
+
+  77% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

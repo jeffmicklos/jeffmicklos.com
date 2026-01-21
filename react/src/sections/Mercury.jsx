@@ -103,12 +103,12 @@ export default function Mercury() {
         </Paragaph>
         <Paragaph>
           Ahead of the transition to Sodium Vapor, Michael Mann’s 1981
-          heist-thriller captured the Chicago streets glowing in Mercury Vapor’s
-          cool blue shift. The cyan light bounces off industrial warehouse
-          walls, streaks across wet car roofs and back alleys, and paints the
-          backgrounds with dancing orbs of bokeh, rendering the city heartless
-          and it’s inhabitants detached, caught in a ceaseless state of
-          unfeeling.
+          heist-thriller, <i>Thief</i>, captured the Chicago streets glowing in
+          Mercury Vapor’s cool blue shift. The cyan light bounces off industrial
+          warehouse walls, streaks across wet car roofs and back alleys, and
+          paints the backgrounds with dancing orbs of bokeh, rendering the city
+          heartless and it’s inhabitants detached, caught in a ceaseless state
+          of unfeeling.
         </Paragaph>
 
         <Paragaph>
@@ -159,6 +159,8 @@ export default function Mercury() {
           <Image path="P0OY5JQ0.jpg" />
         </div>
 
+        <hr className="mt-12 mb-8 border-gray-700" />
+
         <Paragaph>
           Sodium Vapor’s signature tone comes from it’s inability to accurately
           render color, as it only emits a narrow band of the visible light
@@ -186,9 +188,9 @@ export default function Mercury() {
           fully understood. When Sodium Vapor was originally introduced in the
           70s, it sparked outrage amongst citizens due to it’s sedative nature,
           how it’s amber embrace lulled people to sleep as they careened down
-          miles of soft, warm highways. In 1976, Chicago Tribune critic Paul
-          Gapp called the new light “grotesque and unnecessary,” an extension of
-          his earlier 1974 critique:
+          miles of soft, warm highways. In 1976, <i>Chicago Tribune</i> critic
+          Paul Gapp called the new light “grotesque and unnecessary,” an
+          extension of his earlier 1974 critique:
         </Paragaph>
 
         <Paragaph>
@@ -204,7 +206,7 @@ export default function Mercury() {
           Sodium’s warmth bore out to be dreamlike, a staple of millennial past
           reality, where the world felt half asleep, compared to Mercury Vapor’s
           ice-bath that kept it’s inhabitants alert, if not constantly on edge.
-          More recently, our pre-dawn drifting was halted by LED’s: the light of
+          More recently, our pre-dawn drifting was halted by LEDs: the light of
           the screens, the light without sleep. Their short wave lengths fight
           the sunset and our natural circadian rhythm by suppressing melatonin
           production, overclocking our brains, and keeping us forever further

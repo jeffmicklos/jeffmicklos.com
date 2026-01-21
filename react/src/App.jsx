@@ -172,7 +172,7 @@ function App() {
         </ol>
       </nav>
 
-      <div class="w-100 p-4 bg-gray-800 text-xs sticky top-0 z-20 gap-2 hidden portrait:flex sm:hidden">
+      <div class="w-100 p-4 bg-gray-800 text-xs  gap-2 hidden portrait:flex sm:hidden">
         <div className="flex content-center">
           <img
             src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto/emo/Warning.gif"

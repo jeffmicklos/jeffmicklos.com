@@ -52,7 +52,7 @@ export default function Image({ path, children, large = false }) {
       onClick={openPopup}
       className="cursor-zoom-in"
     >
-      <img src={src} className="mb-4" />
+      <img src={src} className="mb-4 bg-black" />
     </a>
   );
 }

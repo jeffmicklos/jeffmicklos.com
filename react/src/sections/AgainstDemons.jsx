@@ -51,7 +51,9 @@ export default function AgainstDemons() {
         <Image path="4f8699554891f73b196b1d7b7742fa7a-1_copy.jpg">
           Jacob Zoot and Johnny Ott, Pennsylvania
         </Image>
-        <Image path="unnamed-2.jpg">Miniaturized door-hanging barn quilt</Image>
+        <Image path="From-the-Frontier-Barn-Quilt-Trai-in-Fulton-County.jpg">
+          Barn Quilt, The Layton Farm, Pennsylvania
+        </Image>
         <Image path="Screenshot_2026-01-09_at_11.44.01_AM.jpg">
           Henry Dreyfuss
         </Image>

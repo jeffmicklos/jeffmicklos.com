@@ -7,6 +7,7 @@ import Image from '../Image';
 import Tip from '../Tooltip';
 import { Blockquote } from '../Blockquote';
 import { Subheader } from '../Subheader';
+import IntroQuote from '../IntroQuote';
 
 export default function TwoThousandAndSix() {
   return (
@@ -59,6 +60,11 @@ export default function TwoThousandAndSix() {
           and like Tony Wilson before him, he imagined culture and city
           interconnected in a feedback loop of creation.
         </Paragaph>
+
+        <Blockquote cite="- Tony Wilson">
+          For any real form of substantive youth culture to thrive in a city,
+          there has to be a place to go, somewhere to meet.
+        </Blockquote>
 
         <Paragaph>
           In years that followed, Lupe grew from niche blog-rap status to

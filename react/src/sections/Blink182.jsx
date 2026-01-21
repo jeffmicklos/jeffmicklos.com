@@ -7,6 +7,7 @@ import Image from '../Image';
 import Tip from '../Tooltip';
 import { Blockquote } from '../Blockquote';
 import IntroQuote from '../IntroQuote';
+import SidebarQuote from '../SidebarQuote';
 
 export default function Blink182() {
   return (
@@ -16,17 +17,52 @@ export default function Blink182() {
       </HeadingImage>
 
       <Sidebar>
-        <Image path="20240725-000000020017.jpg" />
+        {/* <Image path="20240725-000000020017.jpg" /> */}
         <Image path="20240725-000000010011.jpg">
           Blink-182 at Petco Park on June 30, 2024. The happiness I felt at this
           concert was unparalleled. Shot on a Ricoh R1.
         </Image>
-        <Image path="vlcsnap-2026-01-04-17h41m51s676.jpg">
+        {/* <Image path="vlcsnap-2026-01-04-17h41m51s676.jpg">
           – Crowd-sourced footage for Up All Night by Blink-182
-        </Image>
+        </Image> */}
         <Image path="Screenshot_2026-01-04_at_5.50.48_PM.jpg">
           – “Up All Night,” Blink-182
         </Image>
+        <SidebarQuote
+          cite={
+            <>
+              Another great emo interoplation of Sylvia Plath, from an album
+              laced with references to her work.
+              <br />
+              “Forget Me Not”, The Promise Ring, 1997
+            </>
+          }
+        >
+          But between one June and September, <br /> you're all I remember.{' '}
+          <br />
+          But I'm a lantern, my head a moon,
+          <br />I married a room
+        </SidebarQuote>
+
+        <div className="mb-4">
+          <iframe
+            width="100%"
+            className="mb-4"
+            style={{ aspectRatio: 1.6667 }}
+            src="https://www.youtube.com/embed/0cLeyGWthgw?si=JcyOuYjcGW8-hUv6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <figcaption className="text-xs text-gray-500 text-right">
+            I couldn’t mention a song about a ghost without adding this.
+            <br />
+            “Ghosts”, Japan, 1981
+          </figcaption>
+        </div>
+
         <Image path="backlot01.jpg">
           Brochure from the Downey Studios backlot
         </Image>

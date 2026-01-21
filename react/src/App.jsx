@@ -172,7 +172,23 @@ function App() {
         </ol>
       </nav>
 
-      <div className="relative z-10 max-w-screen-lg mx-auto selection:bg-gray-200 selection:text-gray-900 pb-16">
+      <div class="w-100 p-4 bg-gray-800 text-xs sticky top-0 z-20 gap-2 hidden portrait:flex sm:hidden">
+        <div className="flex content-center">
+          <img
+            src="https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto/emo/Warning.gif"
+            width="16"
+            style={{ width: 16 }}
+          />
+        </div>
+
+        <div>
+          <strong>Warning!</strong>
+          <br />
+          This website, much like ourselves, is not made for the phone.
+        </div>
+      </div>
+
+      <div className="relative z-10 max-w-screen-lg mx-auto  px-4 selection:bg-gray-200 selection:text-gray-900 pb-16 xl:px-0">
         {sections.map((section) => {
           const Component = section.component;
           return (

@@ -3,5 +3,10 @@ module.exports = {
     fontFamily: {
       // sans: 'Helvetica, Arial, sans-serif',
     },
+    extend: {
+      screens: {
+        portrait: { raw: '(orientation: portrait)' },
+      },
+    },
   },
 };

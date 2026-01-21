@@ -1,6 +1,6 @@
 import { Tooltip } from 'react-tooltip';
 
-export default function Tip({ children, path }) {
+export default function Tip({ children, path, width = '320px' }) {
   const id = crypto.randomUUID();
   const src = `https://res.cloudinary.com/listentoapril/image/upload/f_auto,q_auto,dpr_2,w_600/emo/${path}`;
 
@@ -20,7 +20,7 @@ export default function Tip({ children, path }) {
         border="1px solid #333"
         style={{
           backgroundColor: '#121212',
-          maxWidth: '320px',
+          maxWidth: width,
         }}
       >
         <img src={src} alt="" className="" loading="lazy" />

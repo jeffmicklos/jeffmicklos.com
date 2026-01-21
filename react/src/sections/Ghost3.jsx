@@ -178,7 +178,17 @@ export default function Ghost3(props) {
         </Paragaph>
 
         <Paragaph>
-          <Subheader>↪️ February 20th 2010, 8:44pm</Subheader>
+          {/* <Subheader>↪ February 20th, 2010, 8:44pm</Subheader> */}
+
+          <Subheader>
+            <img
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1769020287/emo/Chat.png"
+              width="16"
+              className="inline-block mr-2"
+            />
+            <span>February 20th, 2010, 8:44pm</span>
+          </Subheader>
+
           <Blockquote>
             After Malini died i never thought i would meet anyone like her again
             and would never have a best friend and then i met you, that same

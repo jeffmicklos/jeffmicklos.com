@@ -8,6 +8,7 @@ import Tip from '../Tooltip';
 import { Blockquote } from '../Blockquote';
 import IntroQuote from '../IntroQuote';
 import Link from '../Link';
+import ImageTip from '../ImageTip';
 
 export default function AgainstDemons() {
   return (
@@ -48,6 +49,9 @@ export default function AgainstDemons() {
         <Image path="04f9af0e875aa92c0a8247437cb4d775b4528e8c.jpg">
           Braddock’s Point Cemetery, Hilton Head, South Carolina
         </Image>
+
+        {/* <Image path="Dybbuk.jpg" /> */}
+
         <Image path="4f8699554891f73b196b1d7b7742fa7a-1_copy.jpg">
           Jacob Zoot and Johnny Ott, Pennsylvania
         </Image>
@@ -61,9 +65,9 @@ export default function AgainstDemons() {
           Susan Kare, icon designer for the Macintosh Computer, seen at her desk
           with a copy of <i>Symbol Sourcebook</i> on the shelf behind her.
         </Image>
-        <Image path="FC-1001_1.jpg">
+        {/* <Image path="FC-1001_1.jpg">
           Polaroid SX-70, Designed by Henry Dreyfuss, 1972
-        </Image>
+        </Image> */}
         <Image path="Henry-Dreyfusss-1936-Redesign-and-Its-New-Lasting-Impact-LivingWithGravity-1.jpg">
           Hoover Model 150, Designed by Henry Dreyfuss, 1936
         </Image>
@@ -169,6 +173,39 @@ export default function AgainstDemons() {
           European folk tradition of skewering a goose’s foot to door for
           protection.
         </Paragaph>
+
+        <Paragaph className="ml-8 text-gray-500">
+          <div className="font-bold">
+            <img
+              src="https://res.cloudinary.com/listentoapril/image/upload/v1769022405/emo/Lamp_2.png"
+              className="inline-block align-text-top mr-1"
+              width="16"
+            />
+            A Related Tangent
+          </div>
+          <span className="text-sm inline-block">
+            This doorway talisman has an analog in Jewish households: the
+            mezuzah, a small scroll sealed in an enamel and affixed to the
+            doorframe. It’s said to deter the various Kabbalistic demons,
+            including the Dybbuk, a maleficent spirit from that clings onto the
+            body of the living, slowly driving them into hysterics and eventual
+            collapse. The canonical depiction of the Dybbuk comes in the form a
+            1908 engraving by{' '}
+            <Tip content="Speaking of haunted, Lilien is often said to the “Worlds First Zionist Artist,” having helped establish the first Zionist art and design college in historic Palestine.">
+              Ephraim Moshe Lilien*
+            </Tip>
+            , wherein a man is saddled with the literal weight of the dead,
+            forced to drag the burden across an arid wastescape.{' '}
+            <ImageTip path="Dybbuk.jpg" width="600px">
+              <img
+                src="https://res.cloudinary.com/listentoapril/image/upload/v1769022405/emo/Painting.png"
+                className="inline-block align-text-top mr-1"
+                width="16"
+              />
+            </ImageTip>
+          </span>
+        </Paragaph>
+
         <Paragaph>
           Over time, this conspicuous symbol of apotropaic magic was conflated
           with the more visible Pennsylvania Dutch supergraphic folk art of barn

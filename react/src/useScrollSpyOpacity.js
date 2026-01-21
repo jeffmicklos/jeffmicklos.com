@@ -31,31 +31,6 @@ export default function useScrollSpyOpacity(
     const navEl = navRef.current;
     if (!navEl) return;
 
-    let scrollTimeout;
-
-    const onNavClick = (event) => {
-      const a = event.target.closest('a');
-      if (!a || !navEl.contains(a)) return;
-
-      const href = a.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
-
-      event.preventDefault();
-      clearTimeout(scrollTimeout);
-
-      const target = document.querySelector(href);
-      if (!target) return;
-
-      const top =
-        window.scrollY + target.getBoundingClientRect().top - offsetPx;
-
-      window.scrollTo({ top, left: 0, behavior: 'smooth' });
-
-      scrollTimeout = window.setTimeout(() => {}, 400);
-    };
-
-    navEl.addEventListener('click', onNavClick);
-
     // Cache section elements and their links
     const sectionEls = sectionIds
       .map((id) => document.getElementById(id))
@@ -100,8 +75,6 @@ export default function useScrollSpyOpacity(
     window.addEventListener('resize', updateAll);
 
     return () => {
-      clearTimeout(scrollTimeout);
-      navEl.removeEventListener('click', onNavClick);
       window.removeEventListener('scroll', updateAll);
       window.removeEventListener('resize', updateAll);
 

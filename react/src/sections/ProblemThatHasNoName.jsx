@@ -18,10 +18,10 @@ export default function ProblemThatHasNoName() {
 
       <Sidebar>
         {/* <Image path="default.jpg" /> */}
-        <Image path="20250416-Scan_4.jpg">
+        {/* <Image path="20250416-Scan_4.jpg">
           <i>The Medium is the Massage: An Inventory of Effects</i>, Marshall
           McLuhan, 1967
-        </Image>
+        </Image> */}
         <Image path="Levittown_houses._LOC_gsc.5a25985.tif.jpg">
           Levittown houses, New York, 1958
         </Image>
@@ -100,12 +100,12 @@ export default function ProblemThatHasNoName() {
           they could only describe their daily lives.
         </Paragaph>
 
-        <Paragaph>
+        {/* <Paragaph>
           <code className="text-sm text-gray-700">
             &lt;!-- TODO: Explicitly call out “The Problem that Has No name” as
-            phrase coined of Friedan in The Feminine Mystique, 1963 --&gt;
+            phrase coined by Friedan in The Feminine Mystique, 1963 --&gt;
           </code>
-        </Paragaph>
+        </Paragaph> */}
 
         <Paragaph>
           This was “the problem that has no name” and it’s effects were

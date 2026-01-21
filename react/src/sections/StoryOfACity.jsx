@@ -8,6 +8,7 @@ import Tip from '../Tooltip';
 import { Blockquote } from '../Blockquote';
 import IntroQuote from '../IntroQuote';
 import Link from '../Link';
+import SidebarQuote from '../SidebarQuote';
 
 export default function StoryOfACity() {
   return (
@@ -27,10 +28,23 @@ export default function StoryOfACity() {
           Cabaret Voltaire, around the corner from the site of The Hacienda.
           Shot with Ektar 100 on a Ricoh R1.
         </Image>
+
         <Image path="7.jpg">“The Beauty is in the Streets”, Paris, 1968</Image>
         <Image path="bac9a54e-008a-4a74-b427-1813ab9b6558.jpg">
           – “We Want to Live”, Paris, 1968
         </Image>
+        <SidebarQuote
+          cite={
+            <>
+              <i>All That Is Solid Melts Into Air</i>, Marshall Berman, 1981
+            </>
+          }
+        >
+          To be modern is to find ourselves in an environment that promises us
+          adventure, power, joy, growth, transformation of ourselves and the
+          world -- and, at the same time, that threatens to destroy everything
+          we have, everything we know, everything we are.
+        </SidebarQuote>
         <Image path="Hacienda_24.jpg">– The Hacienda, Manchester, 1982</Image>
         <Image path="IMG_4757.jpg">
           London, December 15th 2019, I held these two books up together and

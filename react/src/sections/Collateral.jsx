@@ -65,7 +65,7 @@ export default function Collateral() {
           rendered deepest reaches of the sprawl in sharp clarity. The movie’s
           Director of Photography, Dion Beebe, remarked of the digital capture:
         </Paragaph>
-        <Paragaph>
+        <Paragaph className="mb-8">
           <Blockquote>
             It’s a different result. Because you’re seeing a night world that is
             richly illuminated, with an enormous amount of depth, it’s slightly

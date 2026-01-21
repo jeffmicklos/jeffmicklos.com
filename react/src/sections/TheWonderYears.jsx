@@ -25,6 +25,25 @@ export default function TheWonderYears() {
           Denny’s, Shot on a Fuji S5100, May 21st, 2006, somewhere between 5 and
           6 AM
         </Image>
+
+        <div className="mb-4">
+          <iframe
+            width="100%"
+            className="mb-4"
+            style={{ aspectRatio: 1.6667 }}
+            src="https://www.youtube.com/embed/MecslncPTFE?si=BMPraPFQhGImO95C"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <figcaption className="text-xs text-gray-500 text-right">
+            “Passing Through a Screen Door”, The Wonder Years,
+            May&nbsp;11th,&nbsp;2013
+          </figcaption>
+        </div>
+
         <Image path="20050520-DSCF0998.jpg">
           I can’t quite remember her name, but this waitress held down the
           Rancho San Diego Denny’s in the Mid-2000s, with a thick accent and
@@ -33,7 +52,6 @@ export default function TheWonderYears() {
           <br />
           Shot on a Fuji S5100, May 20th, 2005.
         </Image>
-
         <Image path="20050520-DSCF0993.jpg">
           Denny’s, Shot on a Fuji S5100, May 20th, 2005.
         </Image>
@@ -43,7 +61,6 @@ export default function TheWonderYears() {
         <Image path="20050618-DSCF2048.jpg">
           Denny’s, Shot on a Fuji S5100, June 18th, 2005, 10:26PM
         </Image>
-
         <Image path="private-music.jpg">
           Private Music was a record label founded in 1984, featuring Suzanne
           Ciani, Tangerine Dream, and Phillip Glass. Excellent label name. I’ve
@@ -166,11 +183,11 @@ export default function TheWonderYears() {
         <Paragaph>
           The song’s ending refrain takes on a double reading, one which speaks
           to a <i>Blair Witch</i>-esque inevitability of looped time and folded
-          space, where hikers get unrelentingly shifted back to their starting
-          point, cancelling any gained progress. The other reading, which I tend
-          to prefer, acknowledges that some relics of our past, ones that were
-          thought to be lost, are still holding space in the ever-present “now”,
-          their inertness acting as a museum:
+          space, where the protagonists get unrelentingly shifted back to their
+          starting point, cancelling any gained progress. The other reading,
+          which I tend to prefer, acknowledges that some relics of our past,
+          ones that were thought to be lost, are still holding space in the
+          ever-present “now”, their inertness acting as a museum:
         </Paragaph>
 
         <Paragaph>

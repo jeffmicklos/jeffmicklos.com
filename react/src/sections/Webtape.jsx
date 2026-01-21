@@ -43,7 +43,7 @@ export default function Webtape() {
           <Tip content={'this, i concede, is a bit on the nose'}>
             <i>Memento</i>
           </Tip>
-          , a field recording of a TiVo’d episode of Boy Meets World, and
+          , a field recording of a TiVo’d episode of <i>Boy Meets World</i>, and
           cut-ups of hometown post-hardcore heroes DieRadioDie.
         </Paragaph>
 

@@ -10,29 +10,53 @@ import { Blockquote } from '../Blockquote';
 export default function AngelOfHistory() {
   return (
     <Section>
-      <HeadingImage path="Picture13.jpg">The Angel of History</HeadingImage>
+      <HeadingImage path="000000020011.jpg">
+        The Angel
+        <br />
+        of History
+      </HeadingImage>
 
       <Sidebar>
         {/* <Image path="default.jpg" /> */}
         <Image path="Paul_Klee___Angelus_Novus___1920.jpg">
           <i>Angelus Novus</i>, Paul Klee, 1920
         </Image>
-        <Image path="https___d1e00ek4ebabms.cloudfront.net_production_102d797c-b424-400f-bb81-19eb5631de6e.jpg">
+        {/* <Image path="https___d1e00ek4ebabms.cloudfront.net_production_102d797c-b424-400f-bb81-19eb5631de6e.jpg">
           Walter Benjamin, 1937
-        </Image>
+        </Image> */}
         <Image path="DSCF0684-2.jpg">
           SFMOMA had an exhibition pairing Paul Klee and Barbara Stauffacher
           Solomon in the summer of 2023. I remember talking Bobbie on the phone
           about it, she was as confused as I was at the pairing, stating that
-          she never really liked his work. I wholly agree, but I do wish I could
+          she never really liked his work. I fully agree, but I do wish I could
           see it through Walter Benjamin's eyes.
           <br />
           KLEE + BSS, SFMOMA, shot on a Fuji S5100, July 17th, 2023 at 3:12PM
         </Image>
-        <Image path="exb_klee_header_bss.jpg">
+        {/* <Image path="exb_klee_header_bss.jpg">
           <i>“KLEE” San Francisco Museum of Art program guide</i>, Barbara
           Stauffacher Solomon, 1967
-        </Image>
+        </Image> */}
+        <div>
+          <iframe
+            width="100%"
+            className="mb-4"
+            style={{ aspectRatio: 1.6667 }}
+            src="https://www.youtube.com/embed/RGL2Ne0V9mI?si=sclWaFnk7eDevD4I&amp;clip=UgkxSGYr7TyufdO7GC4tciCoSwgpeb2-mKLr&amp;clipt=EIbJBxjKgAs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <figcaption className="text-xs text-gray-500 text-right text-pretty">
+            Laurie Anderson conjured up a beautiful re-telling of the Angel of
+            History, with her whisper delivery set against a heart-wrenching
+            synth pad.
+            <br />
+            The Dream Before, Laurie Anderson, 1989
+          </figcaption>
+        </div>
       </Sidebar>
 
       <Body>

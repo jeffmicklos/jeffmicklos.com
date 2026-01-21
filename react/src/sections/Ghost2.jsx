@@ -7,6 +7,7 @@ import Image from '../Image';
 import Tip from '../Tooltip';
 import IntroQuote from '../IntroQuote';
 import ImageTip from '../ImageTip';
+import SidebarQuote from '../SidebarQuote';
 
 export default function Ghost2(props) {
   return (
@@ -23,6 +24,24 @@ export default function Ghost2(props) {
           photos on my camera, via Chris Jack, Summer 2007
         </Image>
         {/* <Image path="fuji-a2650-2.png">Fuji A2650, 2002</Image> */}
+
+        <SidebarQuote
+          cite={
+            <>
+              – <i>Local Man Ruins Eveyrthing</i>, The Wonder Years, 2011.
+            </>
+          }
+        >
+          I don’t have roses in the closet
+          <br />
+          But I’ve got pictures in a drawer
+          <br />
+          It’s everything left in me
+          <br />
+          Not to stare at them anymore
+        </SidebarQuote>
+
+        <Image path="20070326-DSCF9877.jpg"></Image>
 
         <div className="px-8">
           <Image path="motorola-razr-v3-pad.png">Motorola Razr V3, 2004</Image>

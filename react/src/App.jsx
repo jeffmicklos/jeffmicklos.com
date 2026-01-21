@@ -172,14 +172,14 @@ function App() {
         </ol>
       </nav>
 
-      <div className="relative z-10  max-w-screen-lg mx-auto selection:bg-gray-200 selection:text-gray-900">
+      <div className="relative z-10 max-w-screen-lg mx-auto selection:bg-gray-200 selection:text-gray-900 pb-16">
         {sections.map((section) => {
           const Component = section.component;
           return (
             <section
               key={section.id}
               id={section.id}
-              className="layout-section text-white mb-8 scroll-mt-16 relative"
+              className="layout-section text-white mb-8 relative"
             >
               <Component />
             </section>

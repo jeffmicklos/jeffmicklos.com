@@ -27,8 +27,8 @@ export default function LakeMungo() {
         <SidebarQuote
           cite={
             <>
-              – “Our Lives Would Make a Sad Boring Movie”, The Hotelier
-              (released as The Hotel Year), 2011
+              – “Our Lives Would Make a Sad Boring Movie”, The&nbsp;Hotelier,
+              2011
             </>
           }
         >
@@ -39,13 +39,13 @@ export default function LakeMungo() {
           It’s that we're dead in our future
           <br />
           but we're not dead yet
-          <br />
+          {/* <br />
           Your life starts right now,
           <br />
           so start acting like it <br />
           Or else you’ll wake up one day
           <br />
-          feeling like a silhouette
+          feeling like a silhouette */}
         </SidebarQuote>
 
         <Image path="Strange-Harbors-Lake-Mungo-15-Anniversary-Palmers.jpg">

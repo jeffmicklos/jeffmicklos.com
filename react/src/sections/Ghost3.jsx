@@ -33,9 +33,9 @@ export default function Ghost3(props) {
         </div> */}
 
         <Image path="20050810-DSCF2707_2.jpg">
-          Raya surfing the net on her HP Pavillion MX70, photos of Alisha lining
-          the top shelf of the desk. Shot on a Fuji S5100, August 10th, 2005 at
-          4:01PM
+          Raya and Kell surfing the net on her HP Pavillion MX70, photos of
+          Alisha lining the top shelf of the desk. Shot on a Fuji S5100, August
+          10th, 2005 at 4:01PM
         </Image>
 
         <div>
@@ -59,7 +59,9 @@ export default function Ghost3(props) {
           <p className="text-xs text-gray-500 text-right text-pretty">
             – The sole contents of a one-off AIM chatlog with Alisha.
             <br />
-            She could have never imagined the depths of this question.
+            The logs don’t show my response at the time, but I can confidently
+            say now, after all these years that yes, Alisha, I do know how to
+            enable javascript.
             <br />
             June 11th, 2005, 3:05PM
           </p>

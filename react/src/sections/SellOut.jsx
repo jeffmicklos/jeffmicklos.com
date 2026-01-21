@@ -23,7 +23,7 @@ export default function SellOut() {
 
         {/* <Image path="20041020-rain_003.jpg"></Image> */}
 
-        <Image path="20070326-DSCF9877.jpg"></Image>
+        {/* <Image path="20070326-DSCF9877.jpg"></Image> */}
 
         <Image path="20050608-DSCF1534.jpg"></Image>
 
@@ -98,9 +98,9 @@ export default function SellOut() {
         </IntroQuote>
         <Paragaph>
           “There There” opens <i>The Greatest Generation</i>, The Wonder Years’
-          follow-up to Suburbia I’ve Given You All and Now I’m Nothing, and the
-          closing chapter in their trilogy about growing up in abandonment . If
-          the earlier records were documents of paralysis,{' '}
+          follow-up to <i>Suburbia I’ve Given You All and Now I’m Nothing</i>,
+          and the closing chapter in their trilogy about growing up in
+          abandonment . If the earlier records were documents of paralysis,{' '}
           <i>The Greatest Generation</i> is a reckoning, the drawing of a map to
           navigate through anxiety and out of depression, with Dan Campbell
           stating: I want to be remembered for more than this.”
@@ -259,17 +259,17 @@ export default function SellOut() {
           image-moments that swirl around us in a constellation of suffering.
         </Paragaph>
         <Paragaph>
+          There’s no grand narrative, only fragments of the past flashing
+          incandescent in the now, brief signals illuminating with hope that
+          they can be found in the wreckage, spiritually reanimated through
+          shared memory and a refusal to look away.
+        </Paragaph>
+        <Paragaph>
           It’s the job of the now to invert those suffocating nightmares, to
           dedicate ourselves to actualizing the lost desires of past lives. To
           live in continual remembrance of those sacrificed at the altar of
           “progress,” whose lives have been extinguished, whose hopes and dreams
           were ground into dust, left as ghosts, in the machinery of Capital.
-        </Paragaph>
-        <Paragaph>
-          There’s no grand narrative, only fragments of the past flashing
-          incandescent in the now, brief signals illuminating with hope that
-          they can be found in the wreckage, spiritually reanimated through
-          shared memory and a refusal to look away.
         </Paragaph>
       </Body>
     </Section>

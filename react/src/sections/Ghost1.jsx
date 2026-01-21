@@ -78,7 +78,7 @@ export default function Ghost1(props) {
 
         <Paragaph>
           Technologist that aren’t preoccupied with building digital enclosures
-          have been built and communally maintained bridges that link lost
+          have been building communally maintained bridges that link lost
           technologies to the present day. Shattered JPEGs can be spliced back
           together with tools like JPEG-Repair-Toolkit, decomposing filesystems
           can be circumnavigated with a process known as File Carving, and
@@ -98,14 +98,14 @@ export default function Ghost1(props) {
 
         <Paragaph>
           The office started to hum with layers of old tech stacked atop new.
-          Digital video were cameras buried underneath yardage of cables and
+          Digital video cameras were buried underneath yardage of cables and
           adapters salvaged from an industrial electronic supply warehouse,
-          connected to a black polycarbonate MacBook, daisy-chained to it’s
-          seventh generation anodized aluminium replacement. Stacks of burned
-          CDs with cryptic messages inscribed on them towered over external
-          drives and disassembled digital cameras. The past and present were
-          living, breathing in unison, a complex stratum of hot-wired memory
-          holes.
+          connected to a black polycarbonate MacBook, which was daisy-chained to
+          it’s seventh generation anodized aluminium replacement. Stacks of
+          burned CDs with cryptic messages inscribed on them towered over
+          external drives and disassembled digital cameras. The past and present
+          were living, breathing in unison, a complex stratum of hot-wired
+          memory holes.
         </Paragaph>
       </Body>
     </Section>

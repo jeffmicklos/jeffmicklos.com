@@ -6,6 +6,7 @@ import Paragaph from '../Paragraph';
 import Image from '../Image';
 import Tip from '../Tooltip';
 import Link from '../Link';
+import SidebarQuote from '../SidebarQuote';
 
 export default function ProctorValley() {
   return (
@@ -29,6 +30,22 @@ export default function ProctorValley() {
           . October 30th, 2008.
         </Image>
 
+        <SidebarQuote
+          cite={<>– “An Ode to the Nite Ratz Club”, The Hotelier, 2011</>}
+        >
+          We could stay out all night long
+          <br />
+          And be king of all the roads
+          <br />
+          And the woods, and the lake, or anything we chose
+          <br />
+          Because everything was ours
+        </SidebarQuote>
+
+        <Image path="undefined_-_Imgur.gif">
+          <i>Silent Hill</i>, 1999
+        </Image>
+
         <Image path="20050530-DSCF1420.jpg">
           Haven Bakery, Jamul, Shot on a Fuji S5100, May&nbsp;30th,&nbsp;2005
         </Image>
@@ -42,10 +59,6 @@ export default function ProctorValley() {
             Found on Flickr
           </Link>
           , May&nbsp;28th,&nbsp;2007
-        </Image>
-
-        <Image path="undefined_-_Imgur.gif">
-          <i>Silent Hill</i>, 1999
         </Image>
       </Sidebar>
 
@@ -67,10 +80,10 @@ export default function ProctorValley() {
           mythologies through the backroads of Jamul. The main thoroughfare for
           the paranormal was a six-and-a-half-mile dirt corridor called Proctor
           Valley Road, which connected the backwoods of Rancho San Diego to
-          somewhere undefined. We traversed it countless times until our SUV,
-          propelled by equal parts petrol and vodka, fishtailed, somersaulted,
-          and tumbled through Proctor Valley’s dirt embankment, nearly turning
-          us into the ghosts we had been looking for.
+          somewhere undefined. We traversed it countless times until our SUV
+          (propelled by equal parts gasoline and vodka) fishtailed,
+          somersaulted, and tumbled through Proctor Valley’s dirt embankment,
+          nearly turning us into the ghosts we had been looking for.
         </Paragaph>
 
         <Paragaph>
@@ -87,7 +100,8 @@ export default function ProctorValley() {
           Google Maps claims it’s 12 minutes straight-through, but I think thats
           how you end up crawling out of an upside down Toyota 4-Runner. It’s a
           shadowy, stretched, and serpentine road where cell phones went dark
-          and radios tuned to static. We only made it to the other end one time.
+          and radios tuned only to static. We only made it to the other end one
+          time.
         </Paragaph>
 
         <Paragaph>
@@ -112,16 +126,16 @@ export default function ProctorValley() {
 
         <Paragaph>
           Scraping the net for local folklore, a LiveJournal post from October
-          4th 2006 comes up, in which user <code>zanev</code> attempts to source
-          directions from Chula Vista to Jamul’s haunted Haven Bakery. The
-          replies are littered with retellings of the lore: the owners daughter
-          committed suicide, and upon finding her in the downstairs bathroom,
-          the owner murdered every worker onsite, before turning the gun on
-          himself. News reports and police filings from the time of Haven
+          4th, 2006 comes up, in which user <code>zanev</code> attempts to
+          source directions from Chula Vista to Jamul’s haunted Haven Bakery.
+          The replies are littered with retellings of the lore: the owners
+          daughter committed suicide, and upon finding her in the downstairs
+          bathroom, the owner murdered every worker onsite, before turning the
+          gun on himself. News reports and police filings from the time of Haven
           Bakery’s operation do not corroborate this story, but the streets and
           forums kept telling it. The network was aglow with beacons, shared
           stories of occult encounters threaded alongside positive words of
-          encouragement, such as the August 31st 2007 reply likely shot from a
+          encouragement, such as the August 31st, 2007 reply likely shot from a
           flipped out T-Mobile Sidekiq: “fukin bitch just go fuk the pigs.”
         </Paragaph>
 
@@ -154,7 +168,18 @@ export default function ProctorValley() {
         </div> */}
 
         <div>
-          <Image large path="Screenshot_2026-01-16_at_7.59.51_PM.jpg">
+          <Image large path="20260121-Screenshot_2026-01-21_at_1.02.26_AM.jpg">
+            The point where Proctor Valley Road emerges from Jamul as a dirt
+            path and animorphs into a proper street, flanked by empty traffic
+            light arms, circa 2023
+            <Link
+              inline
+              href="          https://maps.app.goo.gl/LXtd9oB5EWUzgU3x6"
+            >
+              Google Maps
+            </Link>
+          </Image>
+          {/* <Image large path="Screenshot_2026-01-16_at_7.59.51_PM.jpg">
             The point where Proctor Valley Road emerges from Jamul as a dirt
             path and animorphs into a proper street.
             <Link inline href="https://maps.app.goo.gl/8p9Cbjhk33JKTHiB6">
@@ -167,7 +192,7 @@ export default function ProctorValley() {
             <Link inline href="https://maps.app.goo.gl/pqn27qoWoomULKH96">
               Google Maps
             </Link>
-          </Image>
+          </Image> */}
         </div>
       </Body>
     </Section>

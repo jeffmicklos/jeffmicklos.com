@@ -40,9 +40,9 @@ export default function TwoThousandAndSix() {
           Raya and me, Kensington, September 25th, 2006
         </Image>
 
-        <Image path="20061006-DSCF8660_2.jpg">
+        {/* <Image path="20061006-DSCF8660_2.jpg">
           Bassams on Market St. Downtown, October 6th, 2006
-        </Image>
+        </Image> */}
 
         <Image path="101306_17572.jpg">Casa De Oro, October 13th, 2006</Image>
 
@@ -78,7 +78,7 @@ export default function TwoThousandAndSix() {
           controls
           poster="https://res.cloudinary.com/listentoapril/video/upload/so_109/emo/lupe.jpg"
           src="https://res.cloudinary.com/listentoapril/video/upload/v1768821049/emo/lupe.mov"
-          className="mb-4"
+          className="mb-6"
         />
 
         <Paragaph>

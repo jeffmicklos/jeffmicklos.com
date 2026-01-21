@@ -126,10 +126,29 @@ export default function Raya(props) {
             After youth group Mr.B,the kelly's my loves, rusty, and alecks went
             to eat.. i was so hungery.. well on the way over this song came
             over.. by copeland (it was a very copeland night) well that one song
-            sayin, something like come home from california to flordai well as
-            you all know my bestest friend..my love.. my sister moved there last
-            month.. to flordia well i started to think of her.. missed her and
-            my eyes teared up (I MISS YOU SO MUCH GERMAN!)
+            sayin, something like{' '}
+            <Tip
+              content={
+                <>
+                  <span className="font-sans not-italic">
+                    {' '}
+                    The lyric Raya was trying to summon here was from the track
+                    “California”, it goes:
+                  </span>
+                  <br />
+                  <br />
+                  Come back from California <br />
+                  All of us here in Florida
+                  <br /> Are starved for your attention <br /> We're starved for
+                  your attention
+                </>
+              }
+            >
+              come home from california to flordai
+            </Tip>{' '}
+            well as you all know my bestest friend..my love.. my sister moved
+            there last month.. to flordia well i started to think of her..
+            missed her and my eyes teared up (I MISS YOU SO MUCH GERMAN!)
           </Blockquote>
         </Paragaph>
 

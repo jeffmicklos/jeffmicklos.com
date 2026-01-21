@@ -11,6 +11,7 @@ import { Blockquote } from '../Blockquote';
 import IntroQuote from '../IntroQuote';
 import SidebarQuote from '../SidebarQuote';
 import ScrollVideo from '../ScrollVideo';
+import ImageTip from '../ImageTip';
 
 export default function Mercury() {
   return (
@@ -142,10 +143,15 @@ export default function Mercury() {
           Sodium’s encroaching orange haze. It’s an honest representation of the
           city and it’s infrastructure du juor, whereas other films shot on
           location in Los Angeles during this time period often flood the
-          streets with artificial ambiance of helium-filled balloons,
-          metal-halide rigs, and moonboxes. Take for example these on-location
-          stills from 2001’s The Fast and the Furious, where the lighting takes
-          no sides, but washes everything into neutral nothing:
+          streets with artificial ambiance of{' '}
+          <ImageTip path="led_balloon_sphere.jpg">
+            helium-filled balloons
+          </ImageTip>
+          , metal-halide rigs, and{' '}
+          <ImageTip path="9D3DJmpUGEavhGSNOYbqcEohr5I.jpg">moonboxes</ImageTip>.
+          Take for example these on-location stills from 2001’s{' '}
+          <i>The Fast and the Furious</i>, where the lighting takes no sides,
+          but washes everything into neutral nothing:
         </Paragaph>
 
         <div className="mb-8 mt-8">

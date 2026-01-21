@@ -55,7 +55,7 @@ export default function ScrollVideo({
         playsInline={playsInline}
         preload={preload}
         controls={false}
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
       />
     </div>
   );

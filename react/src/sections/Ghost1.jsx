@@ -68,12 +68,11 @@ export default function Ghost1(props) {
           truth is far more ghostly: data, too, succumbs to time and entropy. It
           decays to oxidization, ultraviolet light, and heat, just like the rest
           of us. In memory cards, electrons eventually weep out of their glass
-          gates, dragging zeroes to ones ones before evaporating into
-          nothingness. The chemistry that makes up optical media like CDs and
-          DVDs reveals itself to be rather fragile within a decade, as it’s
-          organic dyes and reflective mirrors begin to corrode (this process
-          happens doubly fast if you, for some reason, were to leave your burned
-          CDs in a hot car).
+          gates, dragging zeroes to ones before evaporating into nothingness.
+          The chemistry that makes up optical media like CDs and DVDs reveals
+          itself to be rather fragile within a decade, as it’s organic dyes and
+          reflective mirrors begin to corrode (this process happens doubly fast
+          if you, for some reason, were to leave your burned CDs in a hot car).
         </Paragaph>
 
         <Paragaph>

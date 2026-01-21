@@ -43,6 +43,10 @@ export default function Ghost2(props) {
 
         <Image path="20070326-DSCF9877.jpg"></Image>
 
+        <Image path="20050608-DSCF1534.jpg">
+          Spring Valley, June 8th, 2005
+        </Image>
+
         <div className="px-8">
           <Image path="motorola-razr-v3-pad.png">Motorola Razr V3, 2004</Image>
         </div>

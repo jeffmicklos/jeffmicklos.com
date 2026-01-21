@@ -37,9 +37,9 @@ export default function TwoThousandAndSix() {
           A night I have zero recollection of, May 26th, 2006
         </Image>
 
-        <Image path="20060925-DSCF8569.jpg">
+        {/* <Image path="20060925-DSCF8569.jpg">
           Raya and me, Kensington, September 25th, 2006
-        </Image>
+        </Image> */}
 
         {/* <Image path="20061006-DSCF8660_2.jpg">
           Bassams on Market St. Downtown, October 6th, 2006

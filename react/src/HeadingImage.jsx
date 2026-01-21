@@ -17,7 +17,7 @@ export default function HeadingImage(props) {
         <div className="exposure w-full absolute h-full bg-white mix-blend-overlay" />
       )}
       <h2
-        className="place-content-center place-items-center text-7xl/23 font-extrabold text-transparent text-center uppercase"
+        className="place-content-center place-items-center text-7xl/20 font-extrabold text-transparent text-center uppercase"
         style={{
           textShadow: '0 0 2px rgb(255 255 255)',
         }}

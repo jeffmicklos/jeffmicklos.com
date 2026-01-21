@@ -20,12 +20,11 @@ export default function SellOut() {
 
       <Sidebar>
         {/* <Image path="20051113-DSCF4587_2.jpg"></Image> */}
-
         {/* <Image path="20041020-rain_003.jpg"></Image> */}
-
         {/* <Image path="20070326-DSCF9877.jpg"></Image> */}
+        <Image path="20070326-DSCF9904.jpg">Disneyland, March 26th, 2007</Image>
 
-        <Image path="20050608-DSCF1534.jpg"></Image>
+        <Image path="20050721-DSCF2396.jpg">Balboa Park, July 21st, 2005</Image>
 
         <Image path="wonder_years_live.gif">
           Against all odds, I got a chance to see The Wonder Years in 2025. A
@@ -36,7 +35,9 @@ export default function SellOut() {
           The Wonder Years, Petco Park, October 25th, 2025
         </Image>
 
-        <Image path="20050721-DSCF2396.jpg"></Image>
+        <Image path="20040102-DSCF0651_2.jpg">
+          Rancho San Diego, Summer 2007
+        </Image>
 
         <div className="mb-4">
           <iframe
@@ -56,15 +57,10 @@ export default function SellOut() {
           </figcaption>
         </div>
 
-        <Image path="20070326-DSCF9904.jpg">Disneyland, March 26th, 2007</Image>
+        <Image path="---_0163_2.jpg" />
 
         <SidebarQuote
-          cite={
-            <>
-              – “An Ode to the Nite Ratz Club”, The Hotelier (released as The
-              Hotel Year), 2011
-            </>
-          }
+          cite={<>– “An Ode to the Nite Ratz Club”, The Hotelier, 2011</>}
         >
           I still walk those paths at night,
           <br />
@@ -80,13 +76,9 @@ export default function SellOut() {
           <br />
           As if it were my second home
         </SidebarQuote>
-
         {/* <Image path="20060923-DSCF8513_1.jpg"></Image> */}
-
         {/* <Image path="19691231-59810005.jpg"></Image> */}
-
         <Image path="20050926-DSCF3858.jpg"></Image>
-
         {/* <Image path="20050827-DSCF3002.jpg"></Image> */}
       </Sidebar>
 
@@ -100,10 +92,10 @@ export default function SellOut() {
           “There There” opens <i>The Greatest Generation</i>, The Wonder Years’
           follow-up to <i>Suburbia I’ve Given You All and Now I’m Nothing</i>,
           and the closing chapter in their trilogy about growing up in
-          abandonment . If the earlier records were documents of paralysis,{' '}
+          abandonment. If the earlier records were documents of paralysis,{' '}
           <i>The Greatest Generation</i> is a reckoning, the drawing of a map to
           navigate through anxiety and out of depression, with Dan Campbell
-          stating: I want to be remembered for more than this.”
+          stating: “I want to be remembered for more than this.”
         </Paragaph>
         <Paragaph>
           The song begins as pop-punk illuminated by flickering candle light,
@@ -137,12 +129,15 @@ export default function SellOut() {
           located anxiety, a millennial panic that enough hasn’t been done. A
           sense that everyone else has already read the instruction book, been
           whispered the secret, and they are all, in unison, keeping it out of
-          reach. The passages of adulthood, like stable work, home ownership,
-          and coherence, closed just before approach: “All the people I’ve
-          graduated with / All have kids / All have wives / All have people who
-          care if I come home at night.” These insecurities would also take
-          shape in the workplace, pathologized under the banner of imposter
-          syndrome, turning a systematic condition into a personal malfunction.
+          reach. The rites-of-passage of adulthood, like stable work, home
+          ownership, and coherence, closed just before approach:{' '}
+          <i>
+            “All the people I’ve graduated with / All have kids / All have wives
+            / All have people who care if I come home at night.”
+          </i>{' '}
+          These insecurities would also take shape in the workplace,
+          pathologized under the banner of imposter syndrome, turning a
+          systematic condition into a personal malfunction.
         </Paragaph>
         <Paragaph>
           It’s a hallmark of the early 2010s, when digitally sun-bleached photos

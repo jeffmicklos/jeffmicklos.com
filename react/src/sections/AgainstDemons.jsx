@@ -96,7 +96,7 @@ export default function AgainstDemons() {
           Porch ceilings, doors, and shutters across{' '}
           <Tip content="Note: South Carolina is the center point for this tradition and culture, but by no means the geographical limits.">
             South Carolina Lowcountry
-          </Tip>
+          </Tip>{' '}
           are washed in a recurring talisman: a hue regionally called Haint
           Blue, it hovers in the spectrum of robin’s egg and royal blue. Paint
           the threshold the color of water or sky, and a haint (a common

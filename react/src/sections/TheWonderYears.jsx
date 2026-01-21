@@ -7,6 +7,7 @@ import Image from '../Image';
 import Tip from '../Tooltip';
 import { Blockquote } from '../Blockquote';
 import IntroQuote from '../IntroQuote';
+import SidebarQuote from '../SidebarQuote';
 
 export default function TheWonderYears() {
   return (
@@ -55,9 +56,25 @@ export default function TheWonderYears() {
         <Image path="20050520-DSCF0993.jpg">
           Denny’s, Shot on a Fuji S5100, May 20th, 2005.
         </Image>
-        <Image path="080406_23241.jpg">
+
+        <SidebarQuote
+          cite={
+            <>
+              – <i>A Primer on Utopian Philosophy</i>, Jon Greenaway, 2024
+            </>
+          }
+        >
+          We encounter injustice and unfairness, and we feel the possibility of
+          justice if only by its absence. We live through the oppressions of
+          capitalist exploitation, and we yearn for, as Bloch puts it, home. In
+          fact, this has to be put in stronger terms; our awareness of these
+          absences underscores the extent to which what we yearn for is to be
+          human for the first time.
+        </SidebarQuote>
+
+        {/* <Image path="080406_23241.jpg">
           Denny’s, Shot on a Motorola Razr, August 4th, 2006, 11:24PM
-        </Image>
+        </Image> */}
         <Image path="20050618-DSCF2048.jpg">
           Denny’s, Shot on a Fuji S5100, June 18th, 2005, 10:26PM
         </Image>

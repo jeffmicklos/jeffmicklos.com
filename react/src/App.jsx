@@ -19,6 +19,7 @@ import SellOut from './sections/Sellout';
 import StoryOfACity from './sections/StoryOfACity';
 import TheWonderYears from './sections/TheWonderYears';
 import Webtape from './sections/Webtape';
+import AngelOfHistory from './sections/AngelOfHistory';
 import ScrollVideo from './ScrollVideo';
 
 const sections = [
@@ -77,6 +78,11 @@ const sections = [
     name: 'Against Demons',
     id: 'against-demons',
     component: AgainstDemons,
+  },
+  {
+    name: 'The Angel of History',
+    id: 'the-angel-of-history',
+    component: AngelOfHistory,
   },
   {
     name: 'I Saw Your Ghost Tonight: Part 2',

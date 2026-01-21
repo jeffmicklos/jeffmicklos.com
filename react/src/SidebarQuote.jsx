@@ -4,7 +4,9 @@ export default function SidebarQuote({ children, cite }) {
       <blockquote className="font-serif italic text-pretty mb-2">
         {children}
       </blockquote>
-      {cite && <cite className="not-italic text-xs">{cite}</cite>}
+      {cite && (
+        <cite className="not-italic text-xs/4 inline-block">{cite}</cite>
+      )}
     </div>
   );
 }

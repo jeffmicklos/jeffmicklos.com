@@ -32,7 +32,7 @@ export default function Image({ path, children, large = false }) {
           href={`https://res.cloudinary.com/listentoapril/image/upload/emo/${path}`}
           target="_blank"
           onClick={openPopup}
-          className="bg-black"
+          className="cursor-zoom-in"
         >
           <img src={src} alt="" className="mb-2 bg-black" loading="lazy" />
         </a>
@@ -50,6 +50,7 @@ export default function Image({ path, children, large = false }) {
       href={`https://res.cloudinary.com/listentoapril/image/upload/emo/${path}`}
       target="_blank"
       onClick={openPopup}
+      className="cursor-zoom-in"
     >
       <img src={src} className="mb-4" />
     </a>

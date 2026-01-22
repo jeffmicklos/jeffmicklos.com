@@ -95,6 +95,11 @@ const sections = [
     component: Raya,
   },
   {
+    name: 'It Hasn’t Reached Me Yet',
+    id: 'lake-mungo',
+    component: LakeMungo,
+  },
+  {
     name: '2006',
     id: 'two-thousand-and-six',
     component: TwoThousandAndSix,
@@ -103,11 +108,6 @@ const sections = [
     name: 'Islands Of Memory',
     id: 'islands-of-memory',
     component: IslandsOfMemory,
-  },
-  {
-    name: 'It Hasn’t Reached Me Yet',
-    id: 'lake-mungo',
-    component: LakeMungo,
   },
   {
     name: 'I Saw Your Ghost Tonight: Part 3',

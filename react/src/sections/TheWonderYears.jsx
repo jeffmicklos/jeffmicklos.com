@@ -265,7 +265,7 @@ export default function TheWonderYears() {
           “adulthood.” I had dodged the bullet aimed at the heads of every
           millennial graduating into the wreckage 2009: I was salaried in the
           city where our collective future was being fabricated (but, to echo
-          Gibson, not evenly distributed), in real-time by scruffy
+          Gibson, “not evenly distributed”), in real-time by scruffy
           twenty-somethings with huge collections of pirated music and a
           bourgeois taste in brown liquor.
         </Paragaph>

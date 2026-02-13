@@ -77,12 +77,12 @@ export default function Ghost1(props) {
 
         <Paragaph>
           Technologist that aren’t preoccupied with building digital enclosures
-          have been building communally maintained bridges that link lost
-          technologies to the present day. Shattered JPEGs can be spliced back
-          together with tools like JPEG-Repair-Toolkit, decomposing filesystems
-          can be circumnavigated with a process known as File Carving, and
-          bricked phones can have their memory chips physically removed from
-          their circuit boards to be read out and reconstructed bit-by-bit via
+          have been communally maintaining bridges that link lost technologies
+          to the present day. Shattered JPEGs can be spliced back together with
+          tools like JPEG-Repair-Toolkit, decomposing filesystems can be
+          circumnavigated with a process known as File Carving, and bricked
+          phones can have their memory chips physically removed from their
+          circuit boards to be read out and reconstructed bit-by-bit via
           “Chip-Off” data recovery services.
         </Paragaph>
 

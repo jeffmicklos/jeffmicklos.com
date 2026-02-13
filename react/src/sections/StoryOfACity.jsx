@@ -104,14 +104,14 @@ export default function StoryOfACity() {
           Manchester, as alienation, privation, and a stagnation loom over:
           “virgin at the time of writing is closed - THANK GOD, (wish they'd
           stay closed for good.) due to moving(CERTAINLY NOT MOVEMENT, CERTAINLY
-          NOT PROGRESSION.). ”. It reads like a frenetic LiveJournal dispatch,
-          but at just 18 years old, Liz Naylor may not have had words to
-          formally name this haunting, but the feeling was clear: the spectacle
-          was choking her, and everything around her.
+          NOT PROGRESSION.).” It reads like a frenetic LiveJournal dispatch, but
+          at just 18 years old, Liz Naylor may not have had words to formally
+          name this haunting, but the feeling was clear: the spectacle was
+          choking her, and everything around her.
         </Paragaph>
 
         <Paragaph>
-          Six months later, in 1979, Joy Division debuted with
+          Six months later, in 1979, Joy Division debuted with{' '}
           <i>Unknown Pleasures</i>. The 23-year-olds had a terminal vision,
           never questioning “is this it?”, but instead surrendering with dead
           eyes and frozen breath fully committing that “this is it.” What made

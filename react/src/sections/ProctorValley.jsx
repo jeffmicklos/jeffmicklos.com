@@ -118,7 +118,7 @@ export default function ProctorValley() {
 
         <Paragaph>
           I don’t know if we ever saw a ghost, or even believed in ghosts enough
-          to see one, but seeing wasn’t the point. The opposite, we were trying
+          to see one, but seeing wasn’t the point. The opposite: we were trying
           to escape into places that weren’t observed, outside of the gaze of
           security guards, parents, and their heredity conception of the real.
           And we weren’t alone.
